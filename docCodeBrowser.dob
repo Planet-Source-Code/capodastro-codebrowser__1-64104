@@ -1,0 +1,4045 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{CFC13920-9EF4-11D0-B72F-0000C04D4C0A}#6.0#0"; "MSWLESS.OCX"
+Begin VB.UserDocument docCodeBrowser 
+   ClientHeight    =   5430
+   ClientLeft      =   2175
+   ClientTop       =   1935
+   ClientWidth     =   6600
+   HScrollSmallChange=   225
+   Icon            =   "docCodeBrowser.dox":0000
+   ScaleHeight     =   5430
+   ScaleWidth      =   6600
+   ScrollBars      =   0  'None
+   VScrollSmallChange=   225
+   Begin VB.Timer Timer2 
+      Enabled         =   0   'False
+      Interval        =   200
+      Left            =   1080
+      Top             =   4920
+   End
+   Begin VB.Timer Timer1 
+      Enabled         =   0   'False
+      Interval        =   5000
+      Left            =   600
+      Top             =   4920
+   End
+   Begin VB.TextBox TextGetHook 
+      Height          =   285
+      Left            =   1920
+      TabIndex        =   1
+      Top             =   5040
+      Visible         =   0   'False
+      Width           =   1215
+   End
+   Begin VB.PictureBox Picture1 
+      BorderStyle     =   0  'None
+      Height          =   495
+      Left            =   120
+      Picture         =   "docCodeBrowser.dox":030A
+      ScaleHeight     =   495
+      ScaleWidth      =   495
+      TabIndex        =   0
+      Top             =   4920
+      Visible         =   0   'False
+      Width           =   495
+   End
+   Begin MSComctlLib.ImageList ilCodeBrowser 
+      Left            =   3960
+      Top             =   4800
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   16711935
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   35
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":0614
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":0968
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":0CBC
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":1010
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":1364
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":16B8
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":1A0C
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":1D60
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":20B4
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":2408
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":275C
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":2AB0
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":2E02
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":3156
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":34A8
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage16 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":37FC
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage17 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":3B50
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage18 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":3EA4
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage19 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":41F6
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage20 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":4548
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage21 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":489A
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage22 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":4BEC
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage23 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":4F3E
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage24 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":5290
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage25 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":55E4
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage26 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":5938
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage27 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":5C8C
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage28 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":5FE0
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage29 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":6334
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage30 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":6688
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage31 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":69DC
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage32 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":6D2E
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage33 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":7082
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage34 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":73D6
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage35 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "docCodeBrowser.dox":7728
+            Key             =   ""
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.Toolbar Toolbar1 
+      Align           =   1  'Align Top
+      Height          =   330
+      Left            =   0
+      TabIndex        =   2
+      Top             =   0
+      Width           =   6600
+      _ExtentX        =   11642
+      _ExtentY        =   582
+      ButtonWidth     =   609
+      ButtonHeight    =   582
+      AllowCustomize  =   0   'False
+      Wrappable       =   0   'False
+      Style           =   1
+      ImageList       =   "ilCodeBrowser"
+      _Version        =   393216
+      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
+         NumButtons      =   14
+         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "View Code"
+            ImageIndex      =   1
+         EndProperty
+         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "View Designer"
+            ImageIndex      =   2
+         EndProperty
+         BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Last Routine"
+            ImageIndex      =   24
+         EndProperty
+         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Next Routine"
+            ImageIndex      =   25
+         EndProperty
+         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Hit Parade"
+            ImageIndex      =   32
+         EndProperty
+         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "History (Only View)"
+            ImageIndex      =   33
+         EndProperty
+         BeginProperty Button8 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button9 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "About, Report a bug"
+            ImageIndex      =   35
+         EndProperty
+         BeginProperty Button10 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Reset All"
+            ImageIndex      =   27
+         EndProperty
+         BeginProperty Button11 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button12 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Enable Hook"
+            ImageIndex      =   28
+         EndProperty
+         BeginProperty Button13 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Disable Hook"
+            ImageIndex      =   29
+         EndProperty
+         BeginProperty Button14 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.TreeView tvCodeBrowser 
+      Height          =   495
+      Left            =   120
+      TabIndex        =   5
+      TabStop         =   0   'False
+      Top             =   4320
+      Width           =   3735
+      _ExtentX        =   6588
+      _ExtentY        =   873
+      _Version        =   393217
+      HideSelection   =   0   'False
+      Indentation     =   9
+      LabelEdit       =   1
+      LineStyle       =   1
+      Sorted          =   -1  'True
+      Style           =   3
+      HotTracking     =   -1  'True
+      SingleSel       =   -1  'True
+      ImageList       =   "ilCodeBrowser"
+      Appearance      =   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin VB.Label LbSerial 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Only for private use"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000080FF&
+      Height          =   255
+      Left            =   1860
+      TabIndex        =   8
+      Top             =   2310
+      Width           =   2415
+   End
+   Begin MSWLess.WLList LstHits 
+      Height          =   270
+      Left            =   4920
+      TabIndex        =   7
+      Top             =   4680
+      Visible         =   0   'False
+      Width           =   975
+      _ExtentX        =   1720
+      _ExtentY        =   476
+      _Version        =   393216
+      IntegralHeight  =   -1  'True
+      ForeColor       =   8388608
+      BackColor       =   -2147483643
+      Appearance      =   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier New"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      List            =   "docCodeBrowser.dox":7A7A
+   End
+   Begin MSWLess.WLList LstHistory 
+      Height          =   270
+      Left            =   4080
+      TabIndex        =   6
+      Top             =   4320
+      Visible         =   0   'False
+      Width           =   1815
+      _ExtentX        =   3201
+      _ExtentY        =   476
+      _Version        =   393216
+      IntegralHeight  =   -1  'True
+      ForeColor       =   4210688
+      BackColor       =   -2147483643
+      Appearance      =   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier New"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      List            =   "docCodeBrowser.dox":7A96
+   End
+   Begin VB.Label LbVersion 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Version"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   225
+      Left            =   2850
+      TabIndex        =   4
+      Top             =   1440
+      Width           =   1575
+   End
+   Begin VB.Label LbCopyright 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Copyright © 2004 Bernard Czulowski, all rights reserved."
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   225
+      Left            =   240
+      TabIndex        =   3
+      Top             =   2550
+      Width           =   4215
+   End
+   Begin VB.Image Image1 
+      Height          =   3735
+      Left            =   120
+      Picture         =   "docCodeBrowser.dox":7AB2
+      Top             =   480
+      Width           =   4980
+   End
+End
+Attribute VB_Name = "docCodeBrowser"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+'global object to retain a reference to the currently running instance of VB
+Public VBInstance As VBE
+
+' Variable auf den Designer bzw. Klassenmodul "Connect"
+Public Connect As Connect
+
+'add a commandbar button
+Private mobjMCBCtl As CommandBarControl
+Private WithEvents mobjCBEvts As CommandBarEvents
+Attribute mobjCBEvts.VB_VarHelpID = -1
+
+' Hack Combos
+Private Declare Function GetFocus Lib "user32" () As Long
+Private Declare Function SetFocus Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function GetForegroundWindow Lib "user32" () As Long
+Private Declare Function SetForegroundWindow Lib "user32" (ByVal hWnd As Long) As Long
+
+'the classes to work with
+' hide LnkWnds if mouse over
+'Private Const THUNDER_FORM        As String = "ThunderForm"         ' show LnkWnds if mouse over
+'Private Const WNDCLASS_DESKED_GSK As String = "wndclass_desked_gsk" ' show LnkWnds if mouse over
+'Private Const DESIGNER_WINDOW     As String = "DesignerWindow"      ' show LnkWnds if mouse over
+'Private Const MSO_COMMANDBAR      As String = "MsoCommandBar"
+'Private Const VBA_IMMEDIATE       As String = "Immediate"
+
+'search lst or combo
+Private Declare Function SendMessagebyString Lib _
+        "user32" Alias "SendMessageA" (ByVal hWnd As Long, _
+        ByVal wMsg As Long, ByVal wParam As Long, _
+        ByVal lParam As String) As Long
+        
+' Combo Box messages
+Private Const CB_FINDSTRINGEXACT = &H158
+
+' Stop Redraw
+Private Declare Function LockWindowUpdate Lib "user32" (ByVal hWndLock As Long) As Long
+Private Declare Function GetDesktopWindow Lib "user32" () As Long
+
+'execute txt files
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hWnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
+
+' Working constants
+Private LastKey As String
+Private Const Vb_a = "a"
+Private Const Vb_Backslash = "\"
+Private Const Vb_lBracket = "("
+Private Const Vb_rBrackett = ")"
+Private Const Vb_Sep = "|"
+Private Const Vb_Get = "[Get]"
+Private Const Vb_Let = "[Let]"
+Private Const Vb_Set = "[Set]"
+'Private Const Vb_Proc = "[Prc]"
+Private Const Vb_Gnrl = "General"
+Private Const Vb_VBForm = "VBForm"
+Private Const Vb_MSForm = "MSForm"
+Private Const Vb_VBMDIForm = "VBMDIForm"
+Private Const Vb_UserControl = "UserControl"
+Private Const Vb_DocObject = "DocObject"
+Private Const Vb_ActiveXDesigner = "ActiveXDesigner"
+Private Const Vb_PropPage = "PropPage"
+Private Const Vb_Set1 = "Set"
+Private Const Vb_Let1 = "Let"
+Private Const Vb_Get1 = "Get"
+Private Const Vb_Subroutine = "Subroutine"
+Private Const Vb_Project = "Project"
+Private Const Vb_ClassModule = "ClassModule"
+Private Const Vb_ResFile = "ResFile"
+Private Const Vb_StdModule = "StdModule"
+Private Const Vb_Dummy = " "
+Private Const Vb_open = "open"
+Private Const Vb_NewProc = "NewProc"
+Private Const Vb_DummyTag = "Vb_Dummy"
+Private Const Vb_MDIChild = "MDIChild"
+
+'* variables for checking *
+'lsthistory
+Private intcolumnWidth(0 To 2) As Byte ' *** Dim this to number of columns in listbox. ***
+
+Private LastMemberCount As Integer
+Private LastMemberName As String
+Private LastMemberType As Integer
+Public bRefreshing As Boolean
+Private LastProjectName As String
+Private LastCodeModuleName As String
+Private lngPosition As Long
+Private LstHistSel As Long
+
+Private Type NodeA
+    aImage As Long
+    aText As String
+    aTag  As String
+    aKey  As String
+End Type
+
+Private MbrNodes() As NodeA
+
+Private Type NodeB
+    aImage As Long
+    aText As String
+    aTag  As String
+    aKey  As String
+    aDummyKey As String
+End Type
+
+Private CmpNodes() As NodeB
+Private arrHistory() As String
+Private arrHitParade() As String
+Private MouseEvent As CMouseEvent
+Private StopClick As Boolean
+
+Public Sub FS_ClickSelected(ParentKey As String)
+
+
+Dim NodeX As Node
+Set NodeX = tvCodeBrowser.Nodes(ParentKey).Child
+
+For Each NodeX In tvCodeBrowser.Nodes
+    If NodeX.Selected Then
+        StopClick = False
+        tvCodeBrowser_NodeClick NodeX
+        Exit Sub
+    End If
+Next
+
+
+
+End Sub
+
+
+Public Function H_BuildActiveKey() As String
+    On Error GoTo GetActiveProcedure_Err
+
+    Dim prjProject As VBProject
+    Dim cpCodePane As CodePane
+
+    Dim iStartLine As Long, iStartCol As Long, iEndline As Long, iEndCol As Long
+    Dim sProc As String, vaTypes As Variant, sKey As String
+    Dim i As Integer
+
+    On Error Resume Next
+
+    'Try to get the active project
+100 Set prjProject = VBInstance.ActiveVBProject
+
+    'If we couldn't get it, display a message and quit
+102 If prjProject Is Nothing Then
+        Exit Function
+    Else
+104     sKey = prjProject.Name & Vb_Sep
+    End If
+
+    'Try to find the active code pane
+106 Set cpCodePane = VBInstance.ActiveCodePane
+
+    'If we couldn't get it, display a message and quit
+108 If cpCodePane Is Nothing Then
+110     H_BuildActiveKey = sKey
+        Exit Function
+    Else
+112     sKey = sKey & cpCodePane.CodeModule.Parent.Name & Vb_Sep
+    End If
+
+    'Check if the module contains any code
+114 If Not fnHasCode(cpCodePane.CodeModule) Then
+116     H_BuildActiveKey = sKey
+        Exit Function
+    End If
+
+    'Get where the current selection is in the module
+118 cpCodePane.GetSelection iStartLine, iStartCol, iEndline, iEndCol
+
+    'Create an array of procedure types to check for
+120 vaTypes = Array(vbext_pk_Proc, vbext_pk_Get, vbext_pk_Let, vbext_pk_Set)
+
+122 sProc = vbNullString
+
+    'Loop through the procedure type
+124 For i = 1 To 4
+
+        'Try to get the procedure name
+126     sProc = cpCodePane.CodeModule.ProcOfLine(iStartLine, CLng(vaTypes(i)))
+
+128     If sProc <> vbNullString Then
+130         H_BuildActiveKey = sKey & sProc
+            Exit Function
+        End If
+    Next
+
+    Exit Function
+
+GetActiveProcedure_Err:
+132 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.modSubclass.H_BuildActiveKey " & _
+            "at line " & Erl & vbCrLf & Err.Number
+134 Resume Next
+End Function
+Public Sub EV_Timer2()
+
+100 Timer2 = True
+End Sub
+
+
+Public Sub EV_Timer1()
+
+100 Timer1 = True
+End Sub
+
+Public Function H_HasCode(cMod As CodeModule) As Boolean
+    On Error GoTo eH
+    Dim i As Long
+
+100 For i = 1 To cMod.CountOfLines
+'! Added $ to Trim$ for performance
+102     If Not Trim$(cMod.Lines(i, 1)) = vbNullString Then
+104         H_HasCode = True
+            Exit Function
+        End If
+    Next
+    Exit Function
+
+eH:
+106 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.modSubclass.H_HasCode " & _
+            "at line " & Erl & vbCrLf & Err.Number
+108 Resume Next
+End Function
+Public Function H_ActiveProcedureStartLine(FromLine As Long) As Long
+    'general = -1
+    'no code = -2
+    'nocodepane = -3
+    'no project = -4
+
+    On Error GoTo eH
+    Dim prjProject As VBProject
+    Dim cpCodePane As CodePane
+
+    Dim iStartLine As Long, iStartCol As Long, iEndline As Long, iEndCol As Long
+    Dim sProc As String
+    Dim i As Long
+
+    'Try to get the active project
+100 Set prjProject = VBInstance.ActiveVBProject
+
+    'If we couldn't get it, display a message and quit
+102 If prjProject Is Nothing Then
+104     H_ActiveProcedureStartLine = -4
+        Exit Function
+    End If
+
+    'Try to find the active code pane
+106 Set cpCodePane = VBInstance.ActiveCodePane
+
+    'If we couldn't get it, display a message and quit
+108 If cpCodePane Is Nothing Then
+110     H_ActiveProcedureStartLine = -3
+        Exit Function
+    End If
+
+    'Check if the module contains any code
+112 If Not H_HasCode(cpCodePane.CodeModule) Then
+114     H_ActiveProcedureStartLine = -2
+        Exit Function
+    End If
+
+    'Get where the current selection is in the module
+116 cpCodePane.GetSelection iStartLine, iStartCol, iEndline, iEndCol
+
+118 sProc = vbNullString
+
+    'Loop through the procedure type
+    On Error Resume Next
+120 For i = 0 To 3
+
+        'Try to get the procedure name
+122     sProc = cpCodePane.CodeModule.ProcOfLine(FromLine, i)
+
+124     If sProc <> vbNullString Then
+            'If we got a procedure name, find its start and end lines and quit the loop
+126         H_ActiveProcedureStartLine = cpCodePane.CodeModule.ProcStartLine(sProc, i)
+            'iEndline = cpCodePane.CodeModule.ProcCountLines(sProc, CLng(vaTypes(i))) + iStartLine - 1
+            Exit Function
+        End If
+    Next
+
+128 H_ActiveProcedureStartLine = -1
+    Exit Function
+
+eH:
+130 Select Case Err.Number
+        'Case 9, 35
+        '    Resume Next
+    Case Else
+132     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.modSubclass.H_ActiveProcedureStartLine " & _
+                "at line " & Erl & vbCrLf & Err.Number
+134     Err.Clear
+136     Resume Next
+    End Select
+End Function
+
+Public Function H_ActiveProcedureEndLine(FromLine As Long) As Long
+    'general = -1
+    'no code = -2
+    'nocodepane = -3
+    'no project = -4
+
+    On Error GoTo eH
+    Dim prjProject As VBProject
+    Dim cpCodePane As CodePane
+
+    Dim iStartLine As Long, iStartCol As Long, iEndline As Long, iEndCol As Long
+    Dim sProc As String
+    Dim i As Long
+
+    'Try to get the active project
+100 Set prjProject = VBInstance.ActiveVBProject
+
+    'If we couldn't get it, display a message and quit
+102 If prjProject Is Nothing Then
+104     H_ActiveProcedureEndLine = -4
+        Exit Function
+    End If
+
+    'Try to find the active code pane
+106 Set cpCodePane = VBInstance.ActiveCodePane
+
+    'If we couldn't get it, display a message and quit
+108 If cpCodePane Is Nothing Then
+110     H_ActiveProcedureEndLine = -3
+        Exit Function
+    End If
+
+    'Check if the module contains any code
+112 If Not H_HasCode(cpCodePane.CodeModule) Then
+114     H_ActiveProcedureEndLine = -2
+        Exit Function
+    End If
+
+    'Get where the current selection is in the module
+116 cpCodePane.GetSelection iStartLine, iStartCol, iEndline, iEndCol
+
+118 sProc = vbNullString
+
+    'Loop through the procedure type
+    On Error Resume Next
+120 For i = 0 To 3
+
+        'Try to get the procedure name
+122     sProc = cpCodePane.CodeModule.ProcOfLine(FromLine, i)
+
+124     If sProc <> vbNullString Then
+            'If we got a procedure name, find its start and end lines and quit the loop
+126         iStartLine = cpCodePane.CodeModule.ProcStartLine(sProc, i)
+128         H_ActiveProcedureEndLine = cpCodePane.CodeModule.ProcCountLines(sProc, i) + iStartLine - 1
+            Exit Function
+        End If
+    Next
+
+130 H_ActiveProcedureEndLine = -1
+    Exit Function
+
+eH:
+132 Select Case Err.Number
+        'Case 9, 35
+        '    Resume Next
+    Case Else
+134     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.modSubclass.H_ActiveProcedureEndLine " & _
+                "at line " & Erl & vbCrLf & Err.Number
+136     Err.Clear
+138     Resume Next
+    End Select
+End Function
+
+Public Sub L_ResetLists()
+    On Error GoTo eH
+    Dim i&, PrjName$, CodeModuleName$, ProcName$, Pos&, IsNotStopped As Boolean
+    Dim objCodeModule As CodeModule
+    Dim NodeKey$, PropInList$, k&, ArrTmp() As String
+    Const Vb_Mark = "'"
+
+100 IsNotStopped = ProcessMsg
+102 If ProcessMsg = True Then ProcessMsg = False
+
+    'clean arrHistory & LstHistory
+104 If LstHistory.ListCount > 0 Then
+106     ReDim ArrTmp(0 To 2, 0 To LstHistory.ListCount - 1)
+
+108     For i = 0 To LstHistory.ListCount - 1
+110         ProcName = arrHistory(0, i)
+
+112         If Not ProcName = Vb_Gnrl Then
+114             Pos = InStr(ProcName, Vb_lBracket)
+
+116             If Pos > 0 Then
+118                 PropInList = ProcName
+120                 ProcName = Left$(ProcName, Pos - 1)
+'! Added $ to Mid$ for performance
+122                 PropInList = Mid$(PropInList, Pos, 5)
+                End If
+            End If
+
+124         CodeModuleName = arrHistory(1, i)
+126         PrjName = arrHistory(2, i)
+
+            'If ProcName = Vb_Gnrl Then ProcName = vbNullString
+128         NodeKey = PrjName & Vb_Sep & CodeModuleName & Vb_Sep & ProcName
+130         If Len(PropInList) > 0 Then NodeKey = NodeKey & PropInList
+
+132         If tvCodeBrowser.Nodes(NodeKey) Is Nothing Then
+                'mark list the entry for deletion
+134             LstHistory.List(i) = Vb_Mark
+            Else
+136             ArrTmp(2, k) = arrHistory(2, i)
+138             ArrTmp(1, k) = arrHistory(1, i)
+140             ArrTmp(0, k) = arrHistory(0, i)
+142             k = k + 1
+            End If
+144     Next i
+
+Reiterate:
+146     For i = 0 To LstHistory.ListCount - 1   'UBound(arrHistory, 2) - 1
+148         If LstHistory.List(i) = Vb_Mark Then  'arrHistory(2, i) = Vb_Mark Then
+150             LstHistory.RemoveItem i
+152             GoTo Reiterate
+            End If
+        Next
+
+154     If LstHistory.ListCount > 0 Then
+156         ReDim arrHistory(0 To 2, 0 To LstHistory.ListCount - 1)
+158         ReDim Preserve ArrTmp(0 To 2, 0 To LstHistory.ListCount - 1)
+        End If
+
+160     For i = 0 To UBound(arrHistory, 2)
+162         arrHistory(0, i) = ArrTmp(0, i)
+164         arrHistory(1, i) = ArrTmp(1, i)
+166         arrHistory(2, i) = ArrTmp(2, i)
+168     Next i
+
+170     LstHistSel = UBound(arrHistory, 2)
+172     If LstHistory.ListCount > 0 Then LstHistory.Selected(LstHistSel) = True
+    End If
+
+    'clean arrHitParade & LstHits
+174 k = 0
+
+176 If LstHits.ListCount > 0 Then
+
+178     ReDim ArrTmp(0 To 2, 0 To LstHits.ListCount - 1)
+
+180     For i = 0 To UBound(arrHitParade, 2) - 1
+182         ProcName = arrHitParade(0, i)
+
+184         If Not ProcName = Vb_Gnrl Then
+186             Pos = InStr(ProcName, Vb_lBracket)
+
+188             If Pos > 0 Then
+190                 PropInList = ProcName
+192                 ProcName = Left$(ProcName, Pos - 1)
+'! Added $ to Mid$ for performance
+194                 PropInList = Mid$(PropInList, Pos, 5)
+                End If
+            End If
+
+196         CodeModuleName = arrHitParade(1, i)
+198         PrjName = arrHitParade(2, i)
+
+200         If ProcName = Vb_Gnrl Then ProcName = vbNullString
+202         NodeKey = PrjName & Vb_Sep & CodeModuleName & Vb_Sep & ProcName
+204         If Len(PropInList) > 0 Then NodeKey = NodeKey & PropInList
+
+206         If tvCodeBrowser.Nodes(NodeKey) Is Nothing Then
+                'mark list the entry for deletion
+
+208             LstHits.List(i) = Vb_Mark '& LstHits.List(i)
+            Else
+210             ArrTmp(2, k) = arrHitParade(2, i)
+212             ArrTmp(1, k) = arrHitParade(1, i)
+214             ArrTmp(0, k) = arrHitParade(0, i)
+216             k = k + 1
+            End If
+
+218     Next i
+
+        'clean list
+Reiterate1:
+220     For i = 0 To LstHits.ListCount - 1
+            'If Left$(LstHits.List(i), 1) = Vb_Mark Then
+
+222         If LstHits.List(i) = Vb_Mark Then
+224             LstHits.RemoveItem i
+226             GoTo Reiterate1
+            End If
+        Next
+
+228     If LstHits.ListCount > 0 Then
+230         ReDim arrHitParade(0 To 2, 0 To LstHits.ListCount - 1)
+232         ReDim Preserve ArrTmp(0 To 2, 0 To LstHits.ListCount - 1)
+        End If
+
+234     For i = 0 To UBound(arrHistory, 2)
+236         arrHitParade(0, i) = ArrTmp(0, i)
+238         arrHitParade(1, i) = ArrTmp(1, i)
+240         arrHitParade(2, i) = ArrTmp(2, i)
+242     Next i
+    End If
+
+244 If LstHistory.ListCount > 0 Then
+246     Set objCodeModule = VBInstance.VBProjects(arrHistory(2, UBound(arrHistory, 2))).VBComponents(arrHistory(1, UBound(arrHistory, 2))).CodeModule
+
+
+248     LastMemberCount = objCodeModule.Members.Count
+250     LastMemberName = arrHistory(0, UBound(arrHistory, 2))     'should be always different
+
+252     Select Case PropInList
+        Case vbNullString
+254         LastMemberType = 0
+256     Case Vb_Get
+258         LastMemberType = 3
+260     Case Vb_Let
+262         LastMemberType = 1
+264     Case Vb_Set
+266         LastMemberType = 2
+        End Select
+
+268     LastCodeModuleName = arrHistory(1, UBound(arrHistory, 2))
+270     LastProjectName = arrHistory(2, UBound(arrHistory, 2))
+272     LastKey = LastProjectName & Vb_Sep & LastCodeModuleName & Vb_Sep & LastMemberName
+274     If Len(PropInList) > 0 Then LastKey = LastKey & PropInList
+    End If
+276 If (ProcessMsg = False) And (IsNotStopped = True) Then ProcessMsg = True
+    Exit Sub
+
+eH:
+278 Select Case Err.Number
+    Case 35601  'element not found
+280     Err.Clear
+282     Resume Next
+284 Case -2147418113 'automatisierung fehler
+286     Err.Clear
+288     Resume Next
+290 Case 9     'Index ausserhalb des gueltigen Bereichs
+'! Added $ to Str$ for performance
+'! Added $ to Str$ for performance
+'! Added $ to Str$ for performance
+292     MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.L_ResetLists " & _
+                "at line " & Erl & vbCrLf & _
+                "i = " & Str$(i) & vbCrLf & _
+                "k = " & Str$(k) & vbCrLf & _
+                "List Member: " & LstHistory.List(i) & vbCrLf & _
+                "LstHits.List(i) = " & LstHits.List(i) & vbCrLf & _
+                "LstHits.ListCount = " & LstHits.ListCount & vbCrLf & _
+                arrHitParade(0, k) & vbCrLf & _
+                arrHitParade(1, k) & vbCrLf & _
+                arrHitParade(2, k) & vbCrLf & _
+                "ubound " & Str$(UBound(arrHitParade, 2))
+294     If (ProcessMsg = False) And (IsNotStopped = True) Then ProcessMsg = True
+
+296 Case Else
+'! Added $ to Str$ for performance
+'! Added $ to Str$ for performance
+'! Added $ to Str$ for performance
+298     MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.L_ResetLists " & _
+                "at line " & Erl & vbCrLf & _
+                "i = " & Str$(i) & vbCrLf & _
+                "k = " & Str$(k) & vbCrLf & _
+                "List Member: " & LstHistory.List(i) & vbCrLf & _
+                "LstHits.List(i) = " & LstHits.List(i) & vbCrLf & _
+                "LstHits.ListCount = " & LstHits.ListCount & vbCrLf & _
+                arrHitParade(0, k) & vbCrLf & _
+                arrHitParade(1, k) & vbCrLf & _
+                arrHitParade(2, k) & vbCrLf & _
+                "ubound " & Str$(UBound(arrHitParade, 2))
+300     Resume Next
+302     If (ProcessMsg = False) And (IsNotStopped = True) Then ProcessMsg = True
+    End Select
+
+End Sub
+
+Sub M_RefreshMembers(ParentKey As String, VBComponentName As String)
+    On Error GoTo eH
+    Dim NodeX As Node, NodeY As Node, HasChildren As Boolean
+
+100 LockWindowUpdate GetDesktopWindow
+102 If ProcessMsg = True Then ProcessMsg = False
+
+104 If tvCodeBrowser.Nodes.Count Then
+        'delete node children
+106     Set NodeX = tvCodeBrowser.Nodes(ParentKey & VBComponentName & Vb_Sep)
+
+108     Do While NodeX.Children
+110         Set NodeY = NodeX.Child
+112         tvCodeBrowser.Nodes.Remove (NodeY.Index)
+114         If HasChildren = False Then HasChildren = True
+        Loop
+
+116     If HasChildren Then
+118         k = k + 1
+120         tvCodeBrowser.Nodes.Add NodeX.key, _
+                    tvwChild, _
+                    Vb_a & Str$(k), _
+                    Vb_Dummy
+122         If Not bRefreshing Then NodeX.Selected = True
+124         StopClick = False
+126         tvCodeBrowser_NodeClick NodeX
+        End If
+
+        End If
+        
+    If IsLoading = -1 Then
+
+        IsLoading = 0
+130     DoEvents
+132     Timer2 = True
+134     L_ResetListByNewStart
+        
+    End If
+LockWindowUpdate 0
+128     If ProcessMsg = False Then ProcessMsg = True
+    Exit Sub
+eH:
+Select Case Err.Number
+    Case 35601 'Element not found
+        If ProcessMsg = False Then ProcessMsg = True
+        LockWindowUpdate 0
+    Case 91 'Object variable or With block not set
+    Resume Next
+Case Else
+ If ProcessMsg = False Then ProcessMsg = True
+ MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.M_RefreshMembers " & _
+            "at line " & Erl & vbCrLf & Err.Number
+ Resume Next
+ End Select
+End Sub
+
+
+Public Sub EV_NodeNewText(sKey As String, NewText As String)
+    On Error GoTo eH
+
+100 If Not tvCodeBrowser.Nodes(sKey).Text = NewText Then _
+            tvCodeBrowser.Nodes(sKey).Text = NewText
+
+    Exit Sub
+eH:
+Select Case Err.Number
+    Case 35603 'invalid key, by saving a new component.
+        Resume Next
+    Case Else
+102 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.EV_NodeNewText " & _
+            "at line " & Erl & vbCrLf & Err.Number
+104 Resume Next
+End Select
+End Sub
+
+Public Function H_SearchTree(ParentKey As String, NodeKey As String) As Boolean
+    '<EhHeader>
+    On Error GoTo H_SearchTree_Err
+    '</EhHeader>
+    Dim NodeX As Node
+100 Set NodeX = tvCodeBrowser.Nodes(ParentKey).Child
+
+102 For Each NodeX In tvCodeBrowser.Nodes
+104     If NodeKey = NodeX.key Then
+106         H_SearchTree = True
+            Exit Function
+        End If
+    Next
+
+    '<EhFooter>
+    Exit Function
+
+H_SearchTree_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_SearchTree " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Function
+Public Sub Ev_ResClean(ParentKey As String, NewText As String)
+    On Error GoTo eH
+    Dim NodeX As Node
+
+100 Set NodeX = tvCodeBrowser.Nodes(ParentKey).Child
+
+102 For Each NodeX In tvCodeBrowser.Nodes
+104     If NodeX.Tag = Vb_ResFile Then
+
+106         If Not NodeX.Text = NewText Then
+                On Error Resume Next
+108             tvCodeBrowser.Nodes.Remove NodeX.Index
+            End If
+        End If
+    Next
+
+110 For Each NodeX In tvCodeBrowser.Nodes
+112     If NodeX.Tag = Vb_ResFile Then
+114         NodeX.Image = 8
+        End If
+    Next
+
+    Exit Sub
+eH:
+116 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.Ev_ResClean " & _
+            "at line " & Erl
+118 Resume Next
+End Sub
+Public Function H_SearchNodeText(ParentKey As String, NodeText As String) As String
+
+
+    Dim NodeX As Node
+100 Set NodeX = tvCodeBrowser.Nodes(ParentKey).Child
+
+102 For Each NodeX In tvCodeBrowser.Nodes
+104     If InStr(NodeX.Text, NodeText) Then
+106         H_SearchNodeText = NodeX.key
+            Exit Function
+        End If
+    Next
+
+End Function
+Public Sub H_ShowDesigner()
+    '<EhHeader>
+    On Error GoTo H_ShowDesigner_Err
+    '</EhHeader>
+    Dim NodeX As Node, strProject$, strCodeModule$, objComp As VBComponent
+
+100 Set NodeX = tvCodeBrowser.SelectedItem
+102 If NodeX Is Nothing Then Exit Sub
+104 strProject = H_NodeKeyToPrjName(NodeX.key)
+106 strCodeModule = H_NodeKeyToCodeModName(NodeX.key)
+
+108 If LenB(strProject) > 0 And LenB(strCodeModule) > 0 Then
+110     Set objComp = VBInstance.VBProjects(strProject).VBComponents(strCodeModule)
+
+112     If Not objComp.DesignerWindow Is Nothing Then
+114         objComp.DesignerWindow.Visible = True
+116         objComp.DesignerWindow.SetFocus
+        End If
+    End If
+    '<EhFooter>
+    Exit Sub
+
+H_ShowDesigner_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_ShowDesigner " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Public Sub M_RefreshActiveModule()
+        On Error GoTo eH
+        Dim SaveKey As String
+        
+240     DoEvents
+242     bRefreshing = True
+244     SaveKey = LastKey
+246     FreezeMDIClient True
+248     StopClick = False
+
+        'call the general section in the module
+        'tvCodeBrowser.Nodes(LastProjectName & Vb_Sep & LastCodeModuleName & Vb_Sep).Selected = True
+250     tvCodeBrowser_NodeClick tvCodeBrowser.Nodes(LastProjectName & _
+                Vb_Sep & LastCodeModuleName & Vb_Sep)
+252     StopClick = False
+
+        'fill the module with fresh members
+254     M_RefreshMembers VBInstance.VBProjects.VBE.ActiveVBProject.Name & Vb_Sep, _
+                VBInstance.ActiveCodePane.VBE.SelectedVBComponent.Name
+
+        'recall the starting procedure
+256     If Not SaveKey = vbNullString Then
+258         StopClick = False
+260         tvCodeBrowser_NodeClick tvCodeBrowser.Nodes(SaveKey)
+        End If
+
+262     If bControlChange Then 'notifies about added, renamed or deleted control.
+264         bControlChange = False
+266         H_ShowDesigner
+        End If
+
+268     FreezeMDIClient False
+270     DoEvents
+272     bRefreshing = False
+274     L_ResetLists
+        Exit Sub
+eH:
+326 Select Case Err.Number
+    Case 35605 'Das Steuerelement dieses Elementes wurde geloescht
+328     Resume Next
+330 Case 35602      'Schlussel is in der Auflistung nicht eindeutig
+332     MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.M_RefreshActiveModule " & _
+                "at line " & Erl
+334 Case 35601      'Element not found
+336     Resume Next
+338 Case 91        'Objekt Variable oder With-Block Variable nicht festgelegt
+340     FreezeMDIClient False
+344 Case Else
+348     MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.M_RefreshActiveModule " & _
+                "at line " & Erl
+    End Select
+End Sub
+
+
+Private Function H_CheckForMembers(objModule As CodeModule) As Boolean
+    '<EhHeader>
+    On Error GoTo H_CheckForMembers_Err
+    '</EhHeader>
+    Const Vb_EndSub = "End Sub"
+    Const Vb_EndFunction = "End Function"
+    Const Vb_EndProperty = "End Property"
+
+100 H_CheckForMembers = objModule.Find(Vb_EndSub, 1, 1, objModule.CountOfLines, 70, False, True, True)
+102 If Not H_CheckForMembers Then H_CheckForMembers = objModule.Find(Vb_EndFunction, 1, 1, objModule.CountOfLines, 12, False, True, True)
+104 If Not H_CheckForMembers Then H_CheckForMembers = objModule.Find(Vb_EndProperty, 1, 1, objModule.CountOfLines, 11, False, True, True)
+    '<EhFooter>
+    Exit Function
+
+H_CheckForMembers_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_CheckForMembers " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Function
+
+Function H_IsNewThing() As Boolean
+    On Error GoTo eH
+    Dim objCodeModule As CodeModule, objCodePane As CodePane
+    Dim ProcKind&, startLine&, startCol&, endLine&, endCol&
+    Dim MemberName$, ProjectName$, CodePaneName$
+    Static OldActiveProject$
+    Static OldActiveCodePane$
+    Static OldActiveProcedure$
+
+100 ProjectName = VBInstance.ActiveVBProject.Name
+    'CodePaneName = VBInstance.ActiveCodePane.Window.Caption
+102 CodePaneName = VBInstance.ActiveCodePane.CodeModule.Name
+104 Set objCodePane = VBInstance.ActiveCodePane
+106 If objCodePane Is Nothing Then Exit Function
+
+108 Set objCodeModule = VBInstance.ActiveCodePane.CodeModule
+
+    'Get the current selection
+110 objCodeModule.CodePane.GetSelection startLine, startCol, endLine, endCol
+
+    'Get procedure name at the line where the cursor is located
+112 MemberName = objCodeModule.ProcOfLine(startLine, ProcKind)
+
+114 Select Case ProcKind
+    Case vbext_pk_Get
+116     MemberName = MemberName & Vb_Get
+118 Case vbext_pk_Let
+120     MemberName = MemberName & Vb_Let
+122 Case vbext_pk_Set
+124     MemberName = MemberName & Vb_Set
+    End Select
+
+126 If Not ProjectName = OldActiveProject Or _
+            Not CodePaneName = OldActiveCodePane Or _
+            Not MemberName = OldActiveProcedure Then
+128     OldActiveProject = ProjectName
+130     OldActiveCodePane = CodePaneName
+132     OldActiveProcedure = MemberName
+134     H_IsNewThing = True
+    End If
+
+    Exit Function
+eH:
+136 Select Case Err.Number
+    Case 91 'Objekt Variable oder With-Block Variable nicht festgelegt: by loading
+138     Err.Clear
+140 Case Else
+142     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.H_IsNewThing " & _
+                "at line " & Erl & vbCrLf & Err.Number
+144     Resume Next
+    End Select
+End Function
+
+Function H_NodeKeyFromListArr(LstIndex As Long) As String
+    Dim strTemp As String 'Used to take apart selected row in listbox.
+    ' Loop through number of columns.
+    Dim sKey$  ', sTmp$
+    On Error GoTo eH
+
+    'prepare
+100 sKey = arrHistory(2, LstIndex) & Vb_Sep & _
+            arrHistory(1, LstIndex) & Vb_Sep
+
+102 strTemp = arrHistory(0, LstIndex)
+    'MsgBox sKey & " " & strTemp
+104 If Not strTemp = vbNullString Then
+106     If Not strTemp = Vb_Gnrl Then
+108         sKey = sKey & strTemp
+        End If
+    End If
+
+110 H_NodeKeyFromListArr = sKey
+    Exit Function
+eH:
+112 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_NodeKeyFromListArr " & _
+            "at line " & Erl
+End Function
+
+Function H_ModuleKeyFromListArr(LstIndex As Long) As String
+    Dim strTemp As String 'Used to take apart selected row in listbox.
+    ' Loop through number of columns.
+    Dim sKey$  ', sTmp$
+    On Error GoTo eH
+
+    'prepare
+100 sKey = arrHistory(2, LstIndex) & Vb_Sep & _
+            arrHistory(1, LstIndex) & Vb_Sep
+
+110 H_ModuleKeyFromListArr = sKey
+    Exit Function
+eH:
+112 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_ModuleKeyFromListArr " & _
+            "at line " & Erl
+End Function
+
+'Private Function NoDuplicatesInList(lst As ListBox, str As String) As Boolean
+''<EhHeader>
+'On Error GoTo NoDuplicatesInList_Err
+''</EhHeader>
+'Dim tf As Boolean
+'Dim X As Integer
+'NoDuplicatesInList = False
+'
+'For X = 0 To lst.ListCount - 1
+'    If lst.List(X) <> str Then
+'        tf = False
+'    Else
+'        tf = True
+'        Exit For
+'    End If
+'Next X
+'
+'
+'If tf = False And str <> "" Then
+'    NoDuplicatesInList = False
+'Else
+'    NoDuplicatesInList = True
+'End If
+'
+''<EhFooter>
+'Exit Function
+'
+'NoDuplicatesInList_Err:
+'MsgBox Err.Description & vbCrLf & _
+ '        "in CodeBrowser.docCodeBrowser.NoDuplicatesInList " & _
+ '        "at line " & Erl
+'Resume Next
+''</EhFooter>
+'End Function
+
+
+
+'Public Sub H_GetPaneCombos()
+''<EhHeader>
+'On Error GoTo H_GetPaneCombos_Err
+''</EhHeader>
+'Dim tmpHwnd&, tmpHwnd1&, wRct As RECT, wRct1 As RECT
+''On Error GoTo eH
+'
+'hWndCodePane = FindWindowEx(hWndMDIClient, 0, VBA_WINDOW, vbNullString)
+'
+'If hWndCodePane Then
+'    tmpHwnd = FindWindowEx(hWndCodePane, 0, VBA_COMBOBOX, vbNullString)
+'    If tmpHwnd Then
+'        GetWindowRect tmpHwnd, wRct
+'        tmpHwnd1 = FindWindowEx(hWndCodePane, tmpHwnd, VBA_COMBOBOX, vbNullString)
+'
+'        If tmpHwnd1 Then
+'            GetWindowRect tmpHwnd1, wRct1
+'            If wRct.Left > wRct1.Left Then
+'                hWndCmbRight = tmpHwnd
+'                hWndCmbLeft = tmpHwnd1
+'            Else
+'                hWndCmbRight = tmpHwnd1
+'                hWndCmbLeft = tmpHwnd
+'            End If
+'        End If
+'    End If
+'End If
+'
+'
+'Exit Sub
+'eH:
+'On Error GoTo H_GetPaneCombos_Err
+''<EhFooter>
+'Exit Sub
+'
+'H_GetPaneCombos_Err:
+'MsgBox Err.Description & vbCrLf & _
+ '        "in CodeBrowser.docCodeBrowser.H_GetPaneCombos " & _
+ '        "at line " & Erl
+'Resume Next
+''</EhFooter>
+'End Sub
+
+Public Sub EV_DeleteFromKey(sKey As String)
+    On Error GoTo eH
+
+100 tvCodeBrowser.Nodes.Remove (sKey)
+
+    Exit Sub
+eH:
+102 Select Case Err.Number
+    Case 35601 'Element not found
+104     Err.Clear
+106 Case Else
+108     MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.EV_DeleteFromKey " & _
+                "at line " & Erl & vbCrLf & _
+                "sKey: " & sKey
+    End Select
+End Sub
+
+Public Sub H_DeleteTree()
+    On Error GoTo eH
+
+100 tvCodeBrowser.Nodes.Clear
+    Exit Sub
+eH:
+102 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_DeleteTree " & _
+            "at line " & Erl
+104 Resume Next
+End Sub
+
+
+'Public Sub EV_AddNewProject(objProj As VBIDE.VBProject)
+''<EhHeader>
+'On Error GoTo EV_AddNewProject_Err
+''</EhHeader>
+'Dim objModule As CodeModule, objComp As VBComponent, objMbr As Member
+'Dim sTmp$, i&, j&, ProjectKey$
+''On Error GoTo eH
+'
+'
+''SoftBttn(1).Enabled = False
+'
+'sTmp = Vb_lBracket & Right$(objProj.FileName, LenB(objProj.FileName) / 2 - InStrRev(objProj.FileName, Vb_Backslash)) & Vb_rBrackett
+'ProjectKey = objProj.Name & Vb_Sep
+'
+'With tvCodeBrowser.Nodes.Add(, tvwFirst, _
+ '            ProjectKey, _
+ '            objProj.Name & sTmp)
+'    Select Case objProj.Type
+'    Case vbext_pt_ActiveXControl
+'        .Image = 3
+'    Case vbext_pt_ActiveXDll
+'        .Image = 7
+'    Case vbext_pt_ActiveXExe
+'        .Image = 11
+'    Case vbext_pt_StandardExe
+'        .Image = 6
+'    Case Else                               'who knows? :)
+'        .Image = 10
+'    End Select
+'
+'    .Tag = Vb_Project
+'    .Sorted = True
+'End With
+'
+'ReDim CmpNodes(objProj.VBComponents.Count)
+'
+''Cycle through all open components in each project
+'For Each objComp In objProj.VBComponents
+'    i = i + 1
+'
+'    Select Case objComp.Type
+'    Case vbext_ct_StdModule
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 18
+'            .aTag = Vb_StdModule
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'
+'
+'    Case vbext_ct_ClassModule
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 13
+'            .aTag = Vb_ClassModule
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_VBForm
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'
+'            Select Case objModule.Parent.Properties(Vb_MDIChild).Value
+'            Case False
+'                .aImage = 14
+'            Case True
+'                .aImage = 30
+'            End Select
+'
+'            .aTag = Vb_VBForm
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_MSForm
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aImage = 14
+'            .aTag = Vb_MSForm
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_VBMDIForm
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 34 '15
+'            .aTag = Vb_VBMDIForm
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_UserControl
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 16
+'            .aTag = Vb_UserControl
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_DocObject
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 5
+'            .aTag = Vb_DocObject
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_ActiveXDesigner
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 3
+'            .aTag = Vb_ActiveXDesigner
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_PropPage
+'        Set objModule = objComp.CodeModule
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 17
+'            .aTag = Vb_PropPage
+'            'Procedures, Events, etc.
+'            If H_CheckForMembers(objModule) = True Then
+'                k = k + 1
+'                .aDummyKey = Vb_a & Str$(k)
+'            End If
+'        End With
+'    Case vbext_ct_RelatedDocument
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.Name & Vb_Sep
+'            .aText = objModule.Name & sTmp
+'            .aImage = 9
+'            .aTag = objComp.FileNames(1)
+'        End With
+'    Case vbext_ct_ResFile
+'        sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+'
+'        With CmpNodes(i)
+'            .aKey = ProjectKey & objComp.FileNames(1) & Vb_Sep
+'            .aText = sTmp
+'            .aImage = 8
+'            .aTag = Vb_ResFile
+'        End With
+'    End Select
+'Next objComp
+'
+'DoEvents
+'
+'For j = 1 To i
+'    With tvCodeBrowser.Nodes.Add(ProjectKey, _
+     '                tvwChild, _
+     '                CmpNodes(j).aKey, _
+     '                CmpNodes(j).aText, CmpNodes(j).aImage)
+'        .Tag = CmpNodes(j).aTag
+'    End With
+'
+'    If LenB(CmpNodes(j).aDummyKey) > 0 Then
+'        tvCodeBrowser.Nodes.Add CmpNodes(j).aKey, _
+         '                tvwChild, _
+         '                CmpNodes(j).aDummyKey, _
+         '                Vb_Dummy
+'    End If
+'Next j
+'
+'i = 0
+'ReDim CmpNodes(0)
+'Exit Sub
+'
+'eH:
+'Select Case Err.Number
+'Case -2147467259    'method type of object failed
+'    Err.Clear
+'    Resume Next
+'Case Else
+'    MsgBox Err.Number & ", " & Err.Description
+'    Resume Next
+'End Select
+''<EhFooter>
+'Exit Sub
+'
+'EV_AddNewProject_Err:
+'MsgBox Err.Description & vbCrLf & _
+ '        "in CodeBrowser.docCodeBrowser.EV_AddNewProject " & _
+ '        "at line " & Erl
+'Resume Next
+''</EhFooter>
+'End Sub
+
+
+Public Sub EV_RemoveProject(VBProject As VBIDE.VBProject)
+    On Error GoTo eH
+
+100 tvCodeBrowser.Nodes.Remove VBProject.Name & Vb_Sep
+102 DoEvents
+104 L_ResetLists
+
+    Exit Sub
+eH:
+106 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.EV_RemoveProject " & _
+            "at line " & Erl
+108 Resume Next
+End Sub
+
+Public Sub EV_RenameProject(VBProject As VBIDE.VBProject, OldName As String)
+    On Error GoTo eH
+    Dim NodeX As Node, sTmp$
+
+100 sTmp = Vb_lBracket & Right$(VBProject.FileName, LenB(VBProject.FileName) / 2 - InStrRev(VBProject.FileName, Vb_Backslash)) & Vb_rBrackett
+
+102 For Each NodeX In tvCodeBrowser.Nodes
+        'replace the prj.name in node.text
+104     If NodeX.key = OldName & Vb_Sep Then NodeX.Text = VBProject.Name & sTmp
+
+        'replace the key
+106     If Left$(NodeX.key, LenB(OldName) / 2) = OldName Then _
+                NodeX.key = H_ReplaceString(NodeX.key, _
+                OldName & Vb_Sep, VBProject.Name & Vb_Sep)
+    Next
+
+108 L_ResetLists
+
+    Exit Sub
+eH:
+110 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.EV_RenameProject " & _
+            "at line " & Erl
+112 Resume Next
+End Sub
+
+Public Function H_ReplaceString(strSearch As String, _
+        strOld As String, _
+        strNew As String) As String
+    '<EhHeader>
+    On Error GoTo H_ReplaceString_Err
+    '</EhHeader>
+
+    Dim lngFoundPos               As Long
+    Dim strReturn                 As String
+    Dim strReplace                As String
+    Dim strIn                     As String
+    Dim strFind                   As String
+    Dim lngStartPos               As Long
+
+100 strIn = strSearch
+102 strFind = strOld
+104 strReplace = strNew
+106 lngFoundPos = 1
+108 lngStartPos = 1
+110 strReturn = vbNullString
+
+
+    'Process the string while strFind is found
+112 Do While lngFoundPos <> 0
+
+114     lngFoundPos = InStr(lngStartPos, strIn, strFind)
+
+        'If strFind is found
+116     If lngFoundPos <> 0 Then
+
+            'Take all characters before strFind, add strReplace
+            'onto the end, and add this to strReturn
+118         strReturn = strReturn & _
+                    Mid$(strIn, lngStartPos, lngFoundPos - lngStartPos) & _
+                    strReplace
+
+            'If no strFind is found
+        Else
+
+            'Add the remainder of the string to strReturn
+120         strReturn = strReturn & _
+                    Mid$(strIn, lngStartPos)
+
+        End If
+
+        'Start next search at the first character after the replaced string
+122     lngStartPos = lngFoundPos + Len(strFind)
+
+    Loop
+
+    'Return the new string
+124 H_ReplaceString = strReturn
+
+
+    '<EhFooter>
+    Exit Function
+
+H_ReplaceString_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_ReplaceString " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Function
+
+
+
+
+'Public Sub A_RelinkLists()
+'Dim strTemp As String 'Used to take apart selected row in listbox.
+'Dim intCounter As Byte ' Loop through number of columns.
+'Dim txtOutput(3) As String, sKey$
+'Dim strProject$, strCodeModule$
+'Dim objCP As CodePane
+'
+'If LstHistory.ListCount = 0 Then
+'    LastMemberCount = 0
+'    LastMemberName = vbNullString     'should be always different
+'    LastMemberType = 0
+'    LastCodeModuleName = vbNullString
+'    LastProjectName = vbNullString
+'    LastKey = vbNullString
+'Else
+'    'prepare
+'    strProject = arrHistory(2, UBound(arrHistory, 2) - 1)
+'    strCodeModule = arrHistory(1, UBound(arrHistory, 2) - 1)
+'    strTemp = arrHistory(0, UBound(arrHistory, 2) - 1)
+'    If strTemp = Vb_Gnrl Then strTemp = vbNullString
+'    sKey = strProject & Vb_Sep & strCodeModule & Vb_Sep & strTemp
+'    LastMemberCount = VBInstance.VBProjects(strProject).VBComponents(strCodeModule).CodeModule.Members.Count
+'    LastMemberName = H_NodeKeyToProcName(sKey)    'should be always different
+'
+'    Select Case H_NodeKeyToProcKind(sKey)
+'    Case vbNullString
+'        LastMemberType = 0
+'    Case Vb_Get
+'        LastMemberType = 3
+'    Case Vb_Let
+'        LastMemberType = 1
+'    Case Vb_Set
+'        LastMemberType = 2
+'    End Select
+'
+'    LastCodeModuleName = strCodeModule
+'    LastProjectName = strProject
+'    LastKey = sKey
+'    LstHistSel = UBound(arrHistory, 2) - 1
+'End If
+'End Sub
+
+
+'Public Sub EV_Tmr()
+''<EhHeader>
+'On Error GoTo EV_Tmr_Err
+''</EhHeader>
+'Timer1.Enabled = True
+''<EhFooter>
+'Exit Sub
+'
+'EV_Tmr_Err:
+'MsgBox Err.Description & vbCrLf & _
+ '        "in CodeBrowser.docCodeBrowser.EV_Tmr " & _
+ '        "at line " & Erl
+'Resume Next
+''</EhFooter>
+'End Sub
+
+Public Sub Tv_ExpandActive()
+    On Error GoTo eH
+    Dim key$, oCodePane As CodePane, tmpHwnd&, PosX&, PosY&
+
+100 If ProcessMsg = True Then ProcessMsg = False
+102 DoEvents
+104 DoEvents
+106 DoEvents
+108 LockWindowUpdate GetDesktopWindow
+
+110 If VBInstance.VBProjects.Count > 1 Then
+112     key = VBInstance.VBProjects(1) & Vb_Sep
+114     tvCodeBrowser.Nodes(key).Selected = True
+116     key = VBInstance.VBProjects(VBInstance.VBProjects.Count) & Vb_Sep
+118     tvCodeBrowser.Nodes(key).Selected = True
+        Exit Sub
+120 ElseIf VBInstance.VBProjects.Count = 1 Then
+122     Set oCodePane = VBInstance.ActiveCodePane
+
+124     If oCodePane Is Nothing Then
+126         Set oCodePane = VBInstance.ActiveVBProject.VBComponents(1).CodeModule.CodePane
+128         key = VBInstance.ActiveVBProject.Name & Vb_Sep '& VBInstance.ActiveVBProject.VBComponents(1).Name & Vb_Sep
+130         If Len(key) Then tvCodeBrowser.Nodes(key).Selected = True
+        Else
+132         key = VBInstance.ActiveVBProject.Name & Vb_Sep '& oCodePane.CodeModule.Parent.Name & Vb_Sep
+134         tvCodeBrowser.Nodes(key).Selected = True
+        End If
+
+136     tmpHwnd = FindActiveCodepane
+
+138     If tmpHwnd Then
+140         With MouseEvent
+142             PosX = .GetX
+144             PosY = .GetY
+146             .ClickWindow tmpHwnd
+148             .SetMousePos PosX, PosY
+            End With
+
+150         DoEvents
+152         oCodePane.SetSelection 1, 1, 1, 1
+        End If
+    End If
+
+154 LockWindowUpdate 0
+156 If ProcessMsg = False Then ProcessMsg = True
+    Exit Sub
+
+eH:
+158 LockWindowUpdate 0
+160 If ProcessMsg = False Then ProcessMsg = True
+
+162 Select Case Err.Number
+    Case 35601 'Element not found
+164     Timer1.Enabled = True
+166 Case -2147352567     'Method '~' of Object '~' failed
+168     Resume Next
+
+170 Case Else
+172     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.Tv_ExpandActive " & _
+                "at line " & Erl & vbCrLf & Err.Number
+174     Resume Next
+    End Select
+End Sub
+
+Public Sub Tv_MDIChildCheck()
+    On Error GoTo eH
+    Dim sKey$, NodeX As Node, objComp As VBComponent
+
+100 With VBInstance
+102     Set objComp = .SelectedVBComponent
+
+104     If objComp.Type = vbext_ct_VBForm Then
+106         sKey = .ActiveVBProject.Name & Vb_Sep & objComp.Name & Vb_Sep
+108         Set NodeX = tvCodeBrowser.Nodes(sKey)
+
+110         Select Case objComp.Properties(35).Value
+            Case False
+112             If Not (NodeX.Image = 14) Then
+114                 NodeX.Image = 14
+116                 tvCodeBrowser.Refresh
+                End If
+118         Case True
+120             If Not (NodeX.Image = 30) Then
+122                 NodeX.Image = 30
+124                 tvCodeBrowser.Refresh
+                End If
+            End Select
+        End If
+    End With
+
+    Exit Sub
+eH:
+126 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.Tv_MDIChildCheck " & _
+            "at line " & Erl
+128 Resume Next
+End Sub
+
+Sub U_NodeClick_A(NodeX As Node)
+    On Error GoTo eH
+
+    Dim strProject$, strCodeModule$
+    Dim objCP As CodePane
+
+100 If Not NodeX Is Nothing Then
+102     Select Case NodeX.Tag
+        Case Vb_StdModule, Vb_ClassModule, Vb_VBForm, Vb_VBMDIForm, Vb_UserControl, Vb_DocObject, Vb_ActiveXDesigner, Vb_PropPage
+104         strCodeModule = H_NodeKeyToCodeModName(NodeX.key)
+106         strProject = H_NodeKeyToPrjName(NodeX.key)
+108         Set objCP = VBInstance.VBProjects(strProject).VBComponents.Item(strCodeModule).CodeModule.CodePane
+110     Case Vb_Project
+112         strProject = H_NodeKeyToPrjName(NodeX.key)
+114         Set objCP = VBInstance.VBProjects(strProject).VBComponents(1).CodeModule.CodePane
+        End Select
+
+116     If Not objCP Is Nothing Then
+118         objCP.Show
+120         objCP.Window.SetFocus
+        End If
+        
+122     If hWndCmbRight > 0 Then
+124         If Not GetForegroundWindow = hWndCodePane Then SetForegroundWindow hWndCodePane
+        End If
+    End If
+
+    Exit Sub
+eH:
+126 Select Case Err.Number
+    Case 9 'a Bug
+128     Err.Clear
+130     LockWindowUpdate 0
+132     M_RefreshActiveModule
+
+134 Case Else
+
+    End Select
+136 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.U_NodeClick_A " & _
+            "at line " & Erl & vbCrLf & Err.Number
+138 Resume Next
+End Sub
+
+Public Sub U_NodeClick_B(ByVal Node As MSComctlLib.Node)
+    On Error GoTo eH
+    Dim strProject$, strCodeModule$, strProc$
+    Dim nodX As Node, Module As CodeModule, objComp As VBComponent
+
+100 With Node
+102     Select Case .Tag
+        Case Vb_StdModule, Vb_ClassModule, Vb_VBForm, Vb_VBMDIForm, _
+                    Vb_UserControl, Vb_DocObject, Vb_ActiveXDesigner, Vb_PropPage, Vb_MSForm
+            '        'prepare the data for the next sub, U_NodeClick_C
+104         strProject = Left$(.Parent.Text, InStrRev(.Parent.Text, Vb_lBracket) - 1)
+106         strCodeModule = Left$(.Text, InStrRev(.Text, Vb_lBracket) - 1)
+
+            'remove dummy and fill
+108         Set nodX = tvCodeBrowser.SelectedItem.Child
+
+110         If Not nodX Is Nothing Then
+112             If nodX.Text = Vb_Dummy Then      'also mask the removal
+114                 tvCodeBrowser.Nodes.Remove (nodX.Index)
+116                 Call U_NodeClick_C(VBInstance.VBProjects(strProject).VBComponents.Item(strCodeModule).CodeModule, Node.key)
+                End If
+            End If
+
+118     Case Vb_Get1, Vb_Let1, Vb_Set1
+120         strProject = Left$(.Parent.Parent.Text, InStrRev(.Parent.Parent.Text, Vb_lBracket) - 1)
+122         strCodeModule = Left$(.Parent.Text, InStrRev(.Parent.Text, Vb_lBracket) - 1)
+124         strProc = Left$(.Text, Len(.Text) - 5)
+126     Case Vb_Subroutine
+128         strProject = Left$(.Parent.Parent.Text, InStrRev(.Parent.Parent.Text, Vb_lBracket) - 1)
+130         strCodeModule = Left$(.Parent.Text, InStrRev(.Parent.Text, Vb_lBracket) - 1)
+132         strProc = .Text
+134     Case Vb_ResFile
+            Exit Sub
+136     Case Vb_Project
+138         strProject = Left$(.Text, InStr(.Text, Vb_lBracket) - 1)
+            On Error Resume Next
+
+140         Set objComp = VBInstance.VBProjects(strProject).VBComponents(1)
+142         If Not objComp Is Nothing Then
+144             If Not objComp.Type = vbext_ct_ResFile And _
+                        Not objComp.Type = vbext_ct_RelatedDocument Then
+146                 objComp.CodeModule.CodePane.Show
+                End If
+            End If
+
+148         Node.Selected = True
+            Exit Sub
+150     Case Else
+152         If LenB(.Tag) Then      'must be a related doc
+154             ShellExecute 0, Vb_open, _
+                        .Tag, _
+                        vbNullString, App.Path, 5
+            End If
+
+            Exit Sub
+        End Select
+    End With
+
+
+156 If Len(strCodeModule) Then
+        'take care for SoftBttn(1)
+158     Set objComp = VBInstance.VBProjects(strProject).VBComponents(strCodeModule)
+
+        'follow constructing the obj ref. from the tv key
+160     Set Module = VBInstance.VBProjects(strProject).VBComponents.Item(strCodeModule).CodeModule
+
+        'Find out at what position to open the code module window
+162     lngPosition = 1
+
+164     If Len(strProc) Then
+166         With VBInstance.VBProjects(strProject)
+168             With .VBComponents.Item(strCodeModule).CodeModule
+                    'Temporarily defeat error trapping
+                    On Error Resume Next
+
+170                 Select Case Node.Tag
+                    Case Vb_Get1
+172                     lngPosition = .ProcBodyLine(strProc, vbext_pk_Get)
+174                 Case Vb_Let1
+176                     lngPosition = .ProcBodyLine(strProc, vbext_pk_Let)
+178                 Case Vb_Set1
+180                     lngPosition = .ProcBodyLine(strProc, vbext_pk_Set)
+182                 Case Else
+184                     lngPosition = .ProcBodyLine(strProc, vbext_pk_Proc)
+                    End Select
+                End With
+            End With
+        End If
+
+186     Err.Clear
+        On Error GoTo eH
+    End If
+
+188 Node.Selected = True
+
+    Exit Sub
+eH:
+190 Select Case Err.Number
+    Case 9 'a Bug
+192     Err.Clear
+194     LockWindowUpdate 0
+196     M_RefreshActiveModule
+198 Case 91 'copy and paste e procedure, so, double procedure
+        'Obiektvariable oder With-Blockvariable nicht festgelegt
+200     LockWindowUpdate 0
+202     tvCodeBrowser.Refresh
+204 Case Else
+206     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.U_NodeClick_B " & _
+                "at line " & Erl & vbCrLf & _
+                Err.Number
+208     Resume Next
+    End Select
+End Sub
+
+Public Function H_CheckForGet(objModule As CodeModule, objMbr As Member) As Long
+'! Delayed error handler
+    On Error Resume Next
+
+100 H_CheckForGet = objModule.CodePane.CodeModule.ProcBodyLine(objMbr.Name, vbext_pk_Get)
+
+    Exit Function
+eH:
+102 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_CheckForGet " & _
+            "at line " & Erl
+104 Resume Next
+End Function
+Public Function H_CheckMemberExists(objModule As CodeModule, MemberName As String) As Long
+    On Error GoTo eH
+
+100 H_CheckMemberExists = objModule.Members.Item(MemberName).CodeLocation
+    Exit Function
+eH:
+102 Select Case Err.Number
+    Case 9 'Index ausserhalb des gueltigen Bereichs, procedure deleted
+104     H_CheckMemberExists = 0
+106 Case Else
+108     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.H_CheckMemberExists " & _
+                "at line " & Erl & vbCrLf & _
+                Err.Number
+110     Resume Next
+    End Select
+
+End Function
+Public Function H_CheckForAny(objModule As CodeModule, objMbr As Member, ProcType As Integer) As Long
+    On Error GoTo eH
+
+100 H_CheckForAny = objModule.CodePane.CodeModule.ProcBodyLine(objMbr.Name, ProcType)
+102 'H_CheckForAny = 1
+    Exit Function
+eH:
+104 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_CheckForAny " & _
+            "at line " & Erl
+106 Resume Next
+End Function
+Public Function H_CheckForLet(objModule As CodeModule, objMbr As Member) As Long
+'! Delayed error handler
+    On Error Resume Next
+
+100 H_CheckForLet = objModule.CodePane.CodeModule.ProcBodyLine(objMbr.Name, vbext_pk_Let)
+
+    Exit Function
+
+eH:
+102 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_CheckForLet " & _
+            "at line " & Erl
+104 Resume Next
+End Function
+Public Function H_CheckForSet(objModule As CodeModule, objMbr As Member) As Long
+'! Delayed error handler
+    On Error Resume Next
+100 H_CheckForSet = objModule.CodePane.CodeModule.ProcBodyLine(objMbr.Name, vbext_pk_Set)
+
+    Exit Function
+eH:
+102 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_CheckForSet " & _
+            "at line " & Erl
+104 Resume Next
+End Function
+
+Public Sub U_NodeClick_C(objModule As CodeModule, ParentKey As String)
+    'fills a node with procedures
+    'called from U_NodeClick_B, node_click
+    On Error GoTo eH
+
+    Dim objMbr As Member, NodeX As Node, NodeY As Node, i&, j&
+    Dim AddedDecl As Boolean
+
+100 Set NodeY = tvCodeBrowser.Nodes(ParentKey)
+102 NodeY.Sorted = True
+104 ReDim MbrNodes(objModule.Members.Count)
+
+106 If objModule.CountOfDeclarationLines = 0 Then
+108     objModule.InsertLines 1, "Option Explicit"
+110     AddedDecl = True
+    End If
+
+112 For Each objMbr In objModule.Members
+114     If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+116         Select Case objMbr.Type
+            Case vbext_mt_Property
+118             If H_CheckForGet(objModule, objMbr) Then
+120                 With MbrNodes(i)
+122                     .aText = objMbr.Name & Vb_Get: .aTag = Vb_Get1: .aKey = ParentKey & .aText
+124                     .aImage = 19:  i = i + 1
+                    End With
+                End If
+
+126             If H_CheckForLet(objModule, objMbr) Then
+128                 With MbrNodes(i)
+130                     .aText = objMbr.Name & Vb_Let: .aTag = Vb_Let1: .aKey = ParentKey & .aText
+132                     .aImage = 20:  i = i + 1
+                    End With
+                End If
+
+134             If H_CheckForSet(objModule, objMbr) Then
+136                 With MbrNodes(i)
+138                     .aText = objMbr.Name & Vb_Set: .aTag = Vb_Set1: .aKey = ParentKey & .aText
+140                     .aImage = 21:  i = i + 1
+                    End With
+                End If
+142         Case vbext_mt_Method
+144             With MbrNodes(i)
+146                 .aText = objMbr.Name: .aTag = Vb_Subroutine: .aKey = ParentKey & .aText
+
+148                 Select Case NodeY.Tag
+                    Case Vb_VBForm, Vb_VBMDIForm, Vb_UserControl, Vb_DocObject, Vb_ActiveXDesigner, Vb_PropPage, Vb_MSForm
+150                     If Not GetFocus = hWndCmbRight Then SetFocus hWndCmbRight
+
+152                     If SendMessagebyString(hWndCmbRight, CB_FINDSTRINGEXACT, -1, objMbr.Name) = -1 Then
+154                         .aImage = 23:  i = i + 1
+                        Else
+156                         .aImage = 22:  i = i + 1
+                        End If
+158                 Case Vb_StdModule, Vb_ClassModule
+160                     .aImage = 22:  i = i + 1
+                    End Select
+                End With
+            End Select
+        Else
+            'serach for badly inserted procedures
+162         If objMbr.Type = vbext_mt_Method Then
+164             If Not GetFocus = hWndCmbRight Then SetFocus hWndCmbRight
+166             DoEvents
+168             If Not SendMessagebyString(hWndCmbRight, CB_FINDSTRINGEXACT, -1, objMbr.Name) = -1 Then
+170                 With MbrNodes(i)
+172                     .aText = objMbr.Name: .aTag = Vb_Subroutine: .aKey = ParentKey & .aText
+174                     .aImage = 22:  i = i + 1
+                    End With
+                End If
+176         ElseIf objMbr.Type = vbext_mt_Property Then
+178             If H_CheckForGet(objModule, objMbr) Then
+180                 With MbrNodes(i)
+182                     .aText = objMbr.Name & Vb_Get: .aTag = Vb_Get1: .aKey = ParentKey & .aText
+184                     .aImage = 19:  i = i + 1 ': .aSelectedImage = 19
+                    End With
+                End If
+
+186             If H_CheckForLet(objModule, objMbr) Then
+188                 With MbrNodes(i)
+190                     .aText = objMbr.Name & Vb_Let: .aTag = Vb_Let1: .aKey = ParentKey & .aText
+192                     .aImage = 20:  i = i + 1
+                    End With
+                End If
+
+194             If H_CheckForSet(objModule, objMbr) Then
+196                 With MbrNodes(i)
+198                     .aText = objMbr.Name & Vb_Set: .aTag = Vb_Set1: .aKey = ParentKey & .aText
+200                     .aImage = 21:  i = i + 1
+                    End With
+                End If
+            End If
+        End If
+202 Next objMbr
+
+204 For j = 0 To i - 1
+206     With tvCodeBrowser.Nodes.Add(ParentKey, _
+                    tvwChild, _
+                    MbrNodes(j).aKey, _
+                    MbrNodes(j).aText, _
+                    MbrNodes(j).aImage)
+208         .Tag = MbrNodes(j).aTag
+        End With
+    Next
+
+210 ReDim MbrNodes(0)
+
+212 If AddedDecl Then
+214     objModule.CodePane.SetSelection 1, 1, 1, 1
+        'objModule.ReplaceLine 1, Space$(1)
+216     objModule.DeleteLines 1
+    End If
+
+    Exit Sub
+eH:
+218 Select Case Err.Number
+    Case 35602 'Key is not unique in collection
+220     KeyNotUnique = True
+        'ProcessMsg = False
+222     tvCodeBrowser.Nodes.Remove NodeX.Index
+224     Err.Clear
+226     Resume Next
+228 Case 35605
+230     Err.Clear
+232     Resume Next
+234 Case 10 'Array ist unverenderlich oder momentan gesperrt
+236     Err.Clear
+238     LockWindowUpdate 0
+240     tvCodeBrowser.Refresh
+242     Resume Next
+244 Case 9 'a Bug
+246     Err.Clear
+248     M_RefreshActiveModule
+250 Case Else
+252     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.U_NodeClick_C " & _
+                "at line " & Erl & vbCrLf & _
+                Err.Number
+254     Resume Next
+    End Select
+End Sub
+
+Public Sub Tv_Insert_Project(objProj As VBProject)
+    On Error GoTo eH
+    Dim objModule As CodeModule, objComp As VBComponent
+    Dim sTmp$, i&, j&, ProjectKey$
+
+
+100 sTmp = Vb_lBracket & Right$(objProj.FileName, LenB(objProj.FileName) / 2 - InStrRev(objProj.FileName, Vb_Backslash)) & Vb_rBrackett
+102 ProjectKey = objProj.Name & Vb_Sep
+
+104 With tvCodeBrowser.Nodes.Add(, tvwFirst, _
+                ProjectKey, _
+                objProj.Name & sTmp)
+106     Select Case objProj.Type
+        Case vbext_pt_ActiveXControl
+108         .Image = 3
+110     Case vbext_pt_ActiveXDll
+112         .Image = 7
+114     Case vbext_pt_ActiveXExe
+116         .Image = 11
+118     Case vbext_pt_StandardExe
+120         .Image = 6
+122     Case Else                               'who knows? :)
+124         .Image = 10
+        End Select
+
+126     .Tag = Vb_Project
+128     .Sorted = True
+    End With
+
+130 ReDim CmpNodes(objProj.VBComponents.Count)
+
+    'Cycle through all open components in each project
+132 For Each objComp In objProj.VBComponents
+134     i = i + 1
+
+136     Select Case objComp.Type
+        Case vbext_ct_StdModule
+138         Set objModule = objComp.CodeModule
+140         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+142         With CmpNodes(i)
+144             .aKey = ProjectKey & objComp.Name & Vb_Sep
+146             .aText = objModule.Name & sTmp
+148             .aImage = 18
+150             .aTag = Vb_StdModule
+                'Procedures, Events, etc.
+152             If H_CheckForMembers(objModule) = True Then
+154                 k = k + 1
+156                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+158     Case vbext_ct_ClassModule
+160         Set objModule = objComp.CodeModule
+162         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+164         With CmpNodes(i)
+166             .aKey = ProjectKey & objComp.Name & Vb_Sep
+168             .aText = objModule.Name & sTmp
+170             .aImage = 13
+172             .aTag = Vb_ClassModule
+                'Procedures, Events, etc.
+174             If H_CheckForMembers(objModule) = True Then
+176                 k = k + 1
+178                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+180     Case vbext_ct_VBForm
+182         Set objModule = objComp.CodeModule
+184         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+186         With CmpNodes(i)
+188             .aKey = ProjectKey & objComp.Name & Vb_Sep
+190             .aText = objModule.Name & sTmp
+
+192             Select Case objModule.Parent.Properties(Vb_MDIChild).Value
+                Case False
+194                 .aImage = 14
+196             Case True
+198                 .aImage = 30
+                End Select
+
+200             .aTag = Vb_VBForm
+                'Procedures, Events, etc.
+202             If H_CheckForMembers(objModule) = True Then
+204                 k = k + 1
+206                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+208     Case vbext_ct_MSForm
+210         Set objModule = objComp.CodeModule
+212         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+214         With CmpNodes(i)
+216             .aKey = ProjectKey & objComp.Name & Vb_Sep
+218             .aText = objModule.Name & sTmp
+220             .aImage = 14
+222             .aTag = Vb_MSForm
+                'Procedures, Events, etc.
+224             If H_CheckForMembers(objModule) = True Then
+226                 k = k + 1
+228                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+230     Case vbext_ct_VBMDIForm
+232         IsPrjMDI = True
+234         Set objModule = objComp.CodeModule
+236         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+238         With CmpNodes(i)
+240             .aKey = ProjectKey & objComp.Name & Vb_Sep
+242             .aText = objModule.Name & sTmp
+244             .aImage = 34 '15
+246             .aTag = Vb_VBMDIForm
+                'Procedures, Events, etc.
+248             If H_CheckForMembers(objModule) = True Then
+250                 k = k + 1
+252                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+254     Case vbext_ct_UserControl
+256         Set objModule = objComp.CodeModule
+258         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+260         With CmpNodes(i)
+262             .aKey = ProjectKey & objComp.Name & Vb_Sep
+264             .aText = objModule.Name & sTmp
+266             .aImage = 16
+268             .aTag = Vb_UserControl
+                'Procedures, Events, etc.
+270             If H_CheckForMembers(objModule) = True Then
+272                 k = k + 1
+274                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+276     Case vbext_ct_DocObject
+278         Set objModule = objComp.CodeModule
+280         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+282         With CmpNodes(i)
+284             .aKey = ProjectKey & objComp.Name & Vb_Sep
+286             .aText = objModule.Name & sTmp
+288             .aImage = 5
+290             .aTag = Vb_DocObject
+                'Procedures, Events, etc.
+292             If H_CheckForMembers(objModule) = True Then
+294                 k = k + 1
+296                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+298     Case vbext_ct_ActiveXDesigner
+300         Set objModule = objComp.CodeModule
+302         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+304         With CmpNodes(i)
+306             .aKey = ProjectKey & objComp.Name & Vb_Sep
+308             .aText = objModule.Name & sTmp
+310             .aImage = 3
+312             .aTag = Vb_ActiveXDesigner
+                'Procedures, Events, etc.
+314             If H_CheckForMembers(objModule) = True Then
+316                 k = k + 1
+318                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+320     Case vbext_ct_PropPage
+322         Set objModule = objComp.CodeModule
+324         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+326         With CmpNodes(i)
+328             .aKey = ProjectKey & objComp.Name & Vb_Sep
+330             .aText = objModule.Name & sTmp
+332             .aImage = 17
+334             .aTag = Vb_PropPage
+                'Procedures, Events, etc.
+336             If H_CheckForMembers(objModule) = True Then
+338                 k = k + 1
+340                 .aDummyKey = Vb_a & Trim$(Str$(k))
+                End If
+            End With
+342     Case vbext_ct_RelatedDocument
+344         sTmp = Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash))
+
+346         With CmpNodes(i)
+                '.aKey = ProjectKey & objComp.Name & Vb_Sep
+348             .aKey = ProjectKey & sTmp & Vb_Sep
+350             .aText = sTmp
+352             .aImage = 9
+354             .aTag = objComp.FileNames(1)
+            End With
+356     Case vbext_ct_ResFile
+358         sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+360         With CmpNodes(i)
+362             .aKey = ProjectKey & objComp.FileNames(1) & Vb_Sep
+364             .aText = sTmp
+366             .aImage = 8
+368             .aTag = Vb_ResFile
+            End With
+        End Select
+370 Next objComp
+
+372 DoEvents
+
+374 For j = 1 To i
+376     With tvCodeBrowser.Nodes.Add(ProjectKey, _
+                    tvwChild, _
+                    CmpNodes(j).aKey, _
+                    CmpNodes(j).aText, CmpNodes(j).aImage)
+378         .Tag = CmpNodes(j).aTag
+        End With
+
+380     If LenB(CmpNodes(j).aDummyKey) > 0 Then
+382         With tvCodeBrowser.Nodes.Add(CmpNodes(j).aKey, _
+                        tvwChild, _
+                        CmpNodes(j).aDummyKey, _
+                        Vb_Dummy)
+384             .Tag = Vb_DummyTag
+            End With
+        End If
+386 Next j
+
+388 i = 0
+390 ReDim CmpNodes(0)
+    Exit Sub
+eH:
+392 Select Case Err.Number
+    Case 60061 'Method '~' of object '~' failed, load with error
+        Resume Next
+    Case -2147467259    'method type of object failed
+394     Err.Clear
+396     Resume Next
+398 Case 35602          'Key is not unique in collection - a .bat file as document.
+400     Err.Clear
+402     Resume Next
+404 Case 40036 'Method '~' of Object '~' failed
+406     Resume Next
+
+        'Case 91 'Object component not set
+        '    MsgBox CmpNodes(j).aDummyKey
+        '    Resume Next
+408 Case Else
+
+
+410     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.Tv_Insert_Project " & _
+                "at line " & Erl & vbCrLf & Err.Number
+    End Select
+
+    Exit Sub
+eH1:
+412 ProcessMsg = True  'enable processing messages
+End Sub
+
+Public Sub FS_Insert_Components()
+    On Error GoTo eH
+    Dim objProj As VBProject
+
+    'If no active projects, go ahead and quit
+100 If Not VBInstance.VBProjects.Count > 0 Then Exit Sub
+
+    'Cycle through all open projects
+102 For Each objProj In VBInstance.VBProjects
+104     Tv_Insert_Project objProj
+106 Next objProj
+
+108 DoEvents
+110 FreezeMDIClient False
+112 Tv_ExpandActive
+114 If tvCodeBrowser.Visible = False Then tvCodeBrowser.Visible = True
+116 ProcessMsg = True  'enable processing messages
+    
+    Exit Sub
+eH:
+118 FreezeMDIClient False
+120 ProcessMsg = True
+
+122 Select Case Err.Number
+    Case -2147467259    'method type of object failed
+124     Err.Clear
+126     Resume Next
+128 Case Else
+130     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.FS_Insert_Components " & _
+                "at line " & Erl & vbCrLf & Err.Number
+    End Select
+
+End Sub
+
+
+
+Public Sub EV_InsertNewComponent(ProjName As String, objComp As VBComponent)
+    On Error GoTo eH
+    Dim objModule As CodeModule, objMbr As Member, sTmp$
+
+    'If no active projects, go ahead and quit
+100 If VBInstance.VBProjects.Count < 1 Then
+        Exit Sub
+    End If
+
+102 Select Case objComp.Type
+    Case vbext_ct_StdModule
+104     Set objModule = objComp.CodeModule
+106     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+108     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+110         .Image = 18
+112         .Tag = Vb_StdModule
+114         .Selected = True
+        End With
+
+116     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+118         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+120             k = k + 1
+
+122             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+124                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+126     Next objMbr
+128 Case vbext_ct_ClassModule
+130     Set objModule = objComp.CodeModule
+132     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+134     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+136         .Image = 13
+138         .Tag = Vb_ClassModule
+140         .Selected = True
+        End With
+
+142     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+144         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+146             k = k + 1
+
+148             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+150                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+152     Next objMbr
+154 Case vbext_ct_VBForm
+156     Set objModule = objComp.CodeModule
+158     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+160     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+162         .Image = 14
+164         .Tag = Vb_VBForm
+166         .Selected = True
+        End With
+
+168     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+170         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+172             k = k + 1
+
+174             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+176                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+178     Next objMbr
+180 Case vbext_ct_VBMDIForm
+182     Set objModule = objComp.CodeModule
+184     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+186     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+188         .Image = 17
+190         .Tag = Vb_VBMDIForm
+192         .Selected = True
+        End With
+
+194     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+196         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+198             k = k + 1
+
+200             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+202                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+204     Next objMbr
+206 Case vbext_ct_UserControl
+208     Set objModule = objComp.CodeModule
+210     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+212     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+214         .Image = 16
+216         .Tag = Vb_UserControl
+218         .Selected = True
+        End With
+
+220     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+222         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+224             k = k + 1
+
+226             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+228                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+230     Next objMbr
+232 Case vbext_ct_DocObject
+234     Set objModule = objComp.CodeModule
+236     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+238     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+240         .Image = 5
+242         .Tag = Vb_DocObject
+244         .Selected = True
+        End With
+
+246     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+248         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+250             k = k + 1
+
+252             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+254                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+256     Next objMbr
+258 Case vbext_ct_ActiveXDesigner
+260     Set objModule = objComp.CodeModule
+262     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+264     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+266         .Image = 3
+268         .Tag = Vb_ActiveXDesigner
+270         .Selected = True
+        End With
+
+272     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+274         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+276             k = k + 1
+
+278             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+280                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+282     Next objMbr
+284 Case vbext_ct_PropPage
+286     Set objModule = objComp.CodeModule
+288     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+290     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                    objModule.Name & sTmp)
+292         .Image = 17   ': .SelectedImage = 17
+294         .Tag = "PropPage"
+296         .Selected = True
+        End With
+
+298     For Each objMbr In objModule.Members
+            'Procedures, Events, etc.
+300         If objMbr.CodeLocation > objModule.CountOfDeclarationLines Then
+302             k = k + 1
+
+304             With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep & objComp.Name & Vb_Sep, _
+                            tvwChild, _
+                            Vb_a & Trim$(Str$(k)), _
+                            Vb_Dummy)
+
+306                 .Tag = Vb_Dummy
+                    Exit For
+                End With
+            End If
+308     Next objMbr
+310 Case vbext_ct_RelatedDocument
+312     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+314     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.FileNames(1) & Vb_Sep, _
+                    sTmp)
+316         .Image = 9
+318         .Tag = objComp.FileNames(1)
+        End With
+320 Case vbext_ct_ResFile
+322     sTmp = Vb_lBracket & Right$(objComp.FileNames(1), LenB(objComp.FileNames(1)) / 2 - InStrRev(objComp.FileNames(1), Vb_Backslash)) & Vb_rBrackett
+
+324     With tvCodeBrowser.Nodes.Add(ProjName & Vb_Sep, _
+                    tvwChild, _
+                    ProjName & Vb_Sep & objComp.FileNames(1) & Vb_Sep, _
+                    sTmp)
+326         .Image = 7
+328         .Tag = Vb_ResFile
+        End With
+    End Select
+330 Set objComp = Nothing
+332 LockWindowUpdate 0
+    Exit Sub
+eH:
+334 Select Case Err.Number
+    Case -2147467259    'method type of object failed
+336     Err.Clear
+338     Resume Next
+340 Case -2147418113 'automatisierung fehler
+342     Err.Clear
+        'Resume Next
+344 Case 92 'var nicht festgelegt
+346     Err.Clear
+        'Resume Next
+348 Case 35601 'Element not found
+350     Err.Clear
+352     Resume Next
+354 Case 91 'Obiektvariable oder With-Blockvariable nicht festgelegt
+356     Err.Clear
+358 Case Else
+360     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.EV_InsertNewComponent " & _
+                "at line " & Erl & vbCrLf & Err.Number
+    End Select
+
+End Sub
+
+Public Function M_ValidateLastProc() As Long
+    'returns 0 if fails, otherwise 1
+
+    Dim objCodeModule As CodeModule, objCodePane As CodePane, objLastCodeModule As CodeModule
+    Dim ProcKind&, startLine&, startCol&, endLine&, endCol&, MemberCount%
+    Dim MemberName$
+    Dim sKey$, Project$, Module$, sModuleKey$
+    Dim SaveKey1$
+    Dim s1&, s2&, s3&, s4&
+    On Error GoTo eH
+
+100 If IsLoading Or IsCompLoading Then Exit Function
+102 Set objCodePane = VBInstance.ActiveCodePane
+
+    'get act. prj and act. mod.
+104 Module = VBInstance.ActiveCodePane.VBE.SelectedVBComponent.Name
+106 Project = VBInstance.VBProjects.VBE.ActiveVBProject.Name
+
+    'start getting act proc.
+108 Set objCodeModule = VBInstance.ActiveCodePane.CodeModule
+
+    'Get the current selection
+110 objCodeModule.CodePane.GetSelection startLine, startCol, endLine, endCol
+
+    'Get procedure name at the line where the cursor is located
+112 MemberName = objCodeModule.ProcOfLine(startLine, ProcKind)
+
+114 MemberCount = objCodeModule.Members.Count
+
+    'build the corresponding key
+116 sKey = Project & _
+            Vb_Sep & Module & _
+            Vb_Sep & MemberName
+
+    'complete the key
+118 Select Case ProcKind
+    Case vbext_pk_Get
+120     sKey = sKey & Vb_Get
+122 Case vbext_pk_Let
+124     sKey = sKey & Vb_Let
+126 Case vbext_pk_Set
+128     sKey = sKey & Vb_Set
+    End Select
+
+130 If sKey = LastKey Then Exit Function
+
+    'check for deletion, also the unique procedure in a module.
+132 If Not LastMemberCount = MemberCount Then
+        'if just started
+133     If LastMemberCount = 0 And LstHistory.ListCount = 0 Then
+            M_ValidateLastProc = 1
+        End If
+        
+134     GoTo Execute
+    End If
+
+
+    'Take care of General sections
+
+136 If MemberName = vbNullString Then
+138     LastMemberCount = MemberCount
+140     LastMemberName = MemberName     'should be always different
+142     LastMemberType = ProcKind
+144     LastCodeModuleName = Module
+146     LastProjectName = Project
+148     LastKey = sKey
+150     If ProcessMsg = True Then M_ValidateLastProc = 1
+        Exit Function
+    End If
+
+    'now, let check the last proc.
+152 If Not LastMemberName = vbNullString Then
+154     Set objLastCodeModule = VBInstance.VBProjects(LastProjectName).VBComponents.Item(LastCodeModuleName).CodeModule
+156     If Not MemberName = vbNullString Then
+            'Check if that is a deleted procedure
+158         If H_CheckMemberExists(objLastCodeModule, LastMemberName) = 0 Then
+160             GoTo Execute
+                'check also the proc. kind
+162         ElseIf H_CheckForAny(objLastCodeModule, objLastCodeModule.Members.Item(LastMemberName), LastMemberType) = 0 Then
+164             GoTo Execute
+                'check for added/deleted members
+166         ElseIf Not objLastCodeModule.Members.Count = LastMemberCount Then
+168             'MsgBox MemberName
+170             GoTo Execute
+            End If
+        End If
+    End If
+
+    'now let take a look for the actual proc.
+    'if not already in the tree, add it
+172 If Not H_SearchTree(Project & Vb_Sep & Module & Vb_Sep, sKey) Then
+174     GoTo Execute
+    End If
+
+    'if doesn't exist delete it
+176 If H_CheckMemberExists(objCodeModule, MemberName) = 0 Then
+178     tvCodeBrowser.Nodes.Remove sKey
+180     GoTo Execute
+    End If
+
+182 LastMemberCount = MemberCount
+184 LastMemberName = MemberName     'should be always different
+186 LastMemberType = ProcKind
+188 LastCodeModuleName = Module
+190 LastProjectName = Project
+192 LastKey = sKey
+
+    'mod. and prj. are tested by IDE events, however
+    'returning 1 to enable further code processing
+194 If ProcessMsg = True Then M_ValidateLastProc = 1   'everything is fine
+
+    Exit Function
+Execute:
+
+196 LastMemberCount = MemberCount
+198 LastMemberName = MemberName     'should be always different
+200 LastMemberType = ProcKind
+202 LastCodeModuleName = Module
+204 LastProjectName = Project
+206 LastKey = sKey
+
+    'check the empty components and components with no procedure. If there was added a first procedure,
+    'actualize the tv.
+208 sModuleKey = Project & Vb_Sep & Module & Vb_Sep
+
+210 If tvCodeBrowser.Nodes(sModuleKey).Children = 0 Then
+212     If H_CheckForMembers(objCodeModule) Then
+214         k = k + 1
+
+216         With tvCodeBrowser.Nodes.Add(sModuleKey, _
+                        tvwChild, _
+                        Vb_a & Trim$(Str$(k)), _
+                        Vb_Dummy)
+218             .Tag = Vb_DummyTag
+            End With
+
+220         M_RefreshActiveModule
+222         M_ValidateLastProc = 0
+            Exit Function
+        End If
+    End If
+
+224 DoEvents
+226 bRefreshing = True
+228 SaveKey1 = LastKey
+230 tvCodeBrowser_NodeClick tvCodeBrowser.Nodes(LastProjectName & _
+            Vb_Sep & LastCodeModuleName & Vb_Sep)
+232 M_RefreshMembers VBInstance.VBProjects.VBE.ActiveVBProject.Name & Vb_Sep, _
+            VBInstance.ActiveCodePane.VBE.SelectedVBComponent.Name
+234 tvCodeBrowser.Refresh
+236 bRefreshing = False
+
+238 If KeyNotUnique Then
+240     KeyNotUnique = False
+    Else
+242     StopClick = False
+    End If
+
+244 tvCodeBrowser_NodeClick tvCodeBrowser.Nodes(SaveKey1)
+246 VBInstance.ActiveCodePane.GetSelection s1, s2, s3, s4
+248 VBInstance.ActiveCodePane.SetSelection s1 + 1, s2, s3 + 1, s4
+250 DoEvents
+
+    Exit Function
+eH:
+
+252 Select Case Err.Number
+    Case -2147418113  'Method '~' of object '~' failed
+        Exit Function
+254 Case 35601 'Element nicht gefunden
+        Exit Function
+256 Case 35605 'Das Steuerelement dieses Elementes wurde geloescht
+        'Err.Clear
+258     Resume Next
+260 Case 9     'Index ausserhalb des gueltigen Bereichs
+262     tvCodeBrowser.Nodes.Remove sKey
+        'Err.Clear
+264 Case Else
+266     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.M_ValidateLastProc " & _
+                "at line " & Erl & vbCrLf & Err.Number
+        'Err.Clear
+268     GoTo Execute
+    End Select
+
+End Function
+
+Public Sub L_AddToHistory()
+    'don't use NewIndex !!!
+    '<EhHeader>
+    On Error GoTo L_AddToHistory_Err
+    '</EhHeader>
+    Dim txtInput(0 To 2) As String 'Array to simplify loading and retriving entries. ***
+    Dim txtInputShort(0 To 2) As String 'Array to simplify loading and retriving entries. ***
+    Dim strOutputShort$  ' Build up row to add in this string.
+    Dim intCounter As Byte ' loop counter.
+    Dim i&, InList As Boolean
+    'On Error GoTo eH
+    'txtInput (2) = prj
+    'txtInput (1)= mod
+    'txtInput (0) = proc
+
+    'Get procedure name at the line where the cursor is located
+100 txtInput(0) = Right$(LastKey, Len(LastKey) - InStrRev(LastKey, Vb_Sep))
+
+102 If Len(txtInput(0)) > 24 Then
+104     txtInputShort(0) = Left$(txtInput(0), 24)
+    Else
+106     txtInputShort(0) = txtInput(0)
+    End If
+
+108 If txtInput(0) = vbNullString Then
+110     txtInput(0) = Vb_Gnrl
+112     txtInputShort(0) = Vb_Gnrl
+    End If
+
+114 txtInput(1) = LastCodeModuleName
+
+116 If Len(txtInput(1)) > 14 Then
+118     txtInputShort(1) = Left$(txtInput(1), 14)
+    Else
+120     txtInputShort(1) = txtInput(1)
+    End If
+
+122 txtInput(2) = LastProjectName
+
+124 If Len(txtInput(2)) > 14 Then
+126     txtInputShort(2) = Left$(txtInput(2), 14)
+    Else
+128     txtInputShort(2) = txtInput(2)
+    End If
+
+    'build the string for LstHistory
+130 For intCounter = 0 To 2 ' Loop through the array and use column width array.
+132     H_AddColumn strOutputShort, txtInputShort(intCounter), intcolumnWidth(intCounter) ' Add first textbox to string.
+134 Next intCounter
+
+136 If Not strOutputShort = LstHistory.List(LstHistory.ListCount - 1) Then
+
+138     LstHistory.AddItem strOutputShort
+140     ReDim Preserve arrHistory(0 To 2, 0 To LstHistory.ListCount - 1)
+
+142     LstHistSel = UBound(arrHistory, 2)
+
+144     LstHistory.Selected(LstHistSel) = True
+146     arrHistory(0, LstHistory.ListCount - 1) = txtInput(0)
+148     arrHistory(1, LstHistory.ListCount - 1) = txtInput(1)
+150     arrHistory(2, LstHistory.ListCount - 1) = txtInput(2)
+
+152     If LstHits.ListCount Then
+154         For i = 0 To LstHits.ListCount - 1
+156             If arrHitParade(0, i) = txtInput(0) And _
+                        arrHitParade(1, i) = txtInput(1) And _
+                        arrHitParade(2, i) = txtInput(2) Then
+158                 InList = True
+                    Exit For
+                End If
+            Next
+        End If
+
+160     If Not InList Then
+162         LstHits.AddItem strOutputShort
+
+164         If LstHits.ListCount > 1 Then
+166             ReDim Preserve arrHitParade(0 To 2, 0 To LstHits.ListCount)
+            Else
+168             ReDim arrHitParade(0 To 2, 0 To 1)
+            End If
+
+170         arrHitParade(0, LstHits.ListCount - 1) = txtInput(0)
+172         arrHitParade(1, LstHits.ListCount - 1) = txtInput(1)
+174         arrHitParade(2, LstHits.ListCount - 1) = txtInput(2)
+        End If
+    End If
+
+    Exit Sub
+eH:
+176 MsgBox "An error has occured by adding to history!" & vbCrLf & Err.Number & ": " & Err.Description, vbCritical
+    '<EhFooter>
+    Exit Sub
+
+L_AddToHistory_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.L_AddToHistory " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub H_AddColumn(strOutput As String, strAdd As String, intcolumn As Byte)
+    On Error GoTo H_AddColumn_Err
+    Dim intCounter As Byte ' loop counter.
+
+100 strOutput = strOutput + strAdd ' Add column to string(will be row).
+
+    ' Add spaces to the end of each string to get correct column length.
+    ' You might want to limit the textbox maxlength to column length -1.
+102 If Len(strAdd) < intcolumn Then ' Need to add some spaces?
+104     For intCounter = Len(strAdd) To intcolumn - 1 ' Add spaces to string
+106         strOutput = strOutput + " "
+108     Next intCounter
+    End If
+
+    Exit Sub
+
+H_AddColumn_Err:
+110 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_AddColumn " & _
+            "at line " & Erl
+112 Resume Next
+End Sub
+
+
+Function H_NodeKeyToPrjName(NodeKey As String) As String
+    '<EhHeader>
+    On Error GoTo H_NodeKeyToPrjName_Err
+    '</EhHeader>
+100 H_NodeKeyToPrjName = Left$(NodeKey, InStr(NodeKey, Vb_Sep) - 1)
+    '<EhFooter>
+    Exit Function
+
+H_NodeKeyToPrjName_Err:
+Select Case Err.Number
+    Case 5
+        Resume Next
+    Case Else
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_NodeKeyToPrjName " & _
+            "at line " & Erl & vbCrLf & Err.Number
+    Resume Next
+    '</EhFooter>
+End Select
+End Function
+
+Function H_NodeKeyToProcKind(NodeKey As String) As String
+    '<EhHeader>
+    On Error GoTo H_NodeKeyToProcKind_Err
+    '</EhHeader>
+    Dim ProcKind As String
+
+100 ProcKind = Right$(NodeKey, LenB(NodeKey) / 2 - InStrRev(NodeKey, "[") + 1)
+102 If ProcKind = NodeKey Then ProcKind = vbNullString
+104 H_NodeKeyToProcKind = ProcKind
+    '<EhFooter>
+    Exit Function
+
+H_NodeKeyToProcKind_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_NodeKeyToProcKind " & _
+            "at line " & Erl & vbCrLf & Err.Number
+    Resume Next
+    '</EhFooter>
+End Function
+
+
+Function H_NodeKeyToProcName(NodeKey As String) As String
+    '<EhHeader>
+    On Error GoTo H_NodeKeyToProcName_Err
+    '</EhHeader>
+    Dim ProcKind As String
+
+100 ProcKind = Right$(NodeKey, LenB(NodeKey) / 2 - InStrRev(NodeKey, "[") + 1)
+102 H_NodeKeyToProcName = Right$(NodeKey, LenB(NodeKey) / 2 - InStrRev(NodeKey, Vb_Sep))
+
+104 If Not ProcKind = NodeKey Then _
+            H_NodeKeyToProcName = Left$(H_NodeKeyToProcName, LenB(H_NodeKeyToProcName) / 2 - LenB(ProcKind) / 2)
+    '<EhFooter>
+    Exit Function
+
+H_NodeKeyToProcName_Err:
+
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_NodeKeyToProcName " & _
+            "at line " & Erl & vbCrLf & Err.Number
+    Resume Next
+    '</EhFooter>
+End Function
+
+Function H_NodeKeyToCodeModName(NodeKey As String) As String
+    '<EhHeader>
+    On Error GoTo H_NodeKeyToCodeModName_Err
+    '</EhHeader>
+    Dim sTmp$
+
+
+100 sTmp = Right$(Left$(NodeKey, InStrRev(NodeKey, Vb_Sep) - 1), _
+            LenB(Left$(NodeKey, InStrRev(NodeKey, Vb_Sep) - 1)) / 2 - _
+            InStr(Left$(NodeKey, InStrRev(NodeKey, Vb_Sep) - 1), Vb_Sep))
+
+102 If Not sTmp = Left$(NodeKey, InStr(NodeKey, Vb_Sep) - 1) Then
+104     H_NodeKeyToCodeModName = sTmp
+    End If
+
+    '<EhFooter>
+    Exit Function
+
+H_NodeKeyToCodeModName_Err:
+Select Case Err.Number
+    Case 5
+        Resume Next
+    Case Else
+        MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.H_NodeKeyToCodeModName " & _
+            "at line " & Erl & vbCrLf & Err.Number
+        Resume Next
+    '</EhFooter>
+End Select
+End Function
+
+'Public Sub GetProperties(objModule As CodeModule)
+''<EhHeader>
+'On Error GoTo GetProperties_Err
+''</EhHeader>
+'Dim objProp As Property
+'On Error Resume Next
+'
+'For Each objProp In objModule.Parent.Properties
+'    Debug.Print objProp.Name & ", " & objProp.Value
+'Next
+''<EhFooter>
+'Exit Sub
+'
+'GetProperties_Err:
+'MsgBox Err.Description & vbCrLf & _
+ '        "in CodeBrowser.docCodeBrowser.GetProperties " & _
+ '        "at line " & Erl
+'Resume Next
+''</EhFooter>
+'End Sub
+
+'Public Sub GetPropertyName(objModule As CodeModule)
+''<EhHeader>
+'On Error GoTo GetPropertyName_Err
+''</EhHeader>
+'Dim objProp As Property
+'On Error Resume Next
+'
+''For Each objProp In objModule.Parent.Properties
+''Debug.Print objProp.Name & ", " & objProp.Value
+''Next
+'
+'Set objProp = objModule.Parent.Properties(1)
+'Debug.Print objProp.Name & ", " & objProp.Value
+'
+''<EhFooter>
+'Exit Sub
+'
+'GetPropertyName_Err:
+'MsgBox Err.Description & vbCrLf & _
+ '        "in CodeBrowser.docCodeBrowser.GetPropertyName " & _
+ '        "at line " & Erl
+'Resume Next
+''</EhFooter>
+'End Sub
+
+Public Sub L_ResetListByNewStart()
+    On Error GoTo L_ResetListByNewStart_Err
+
+100 LstHistory.Clear
+102 LstHits.Clear
+104 LastMemberCount = 0
+106 LastMemberName = vbNullString
+108 LastMemberType = 0
+110 bRefreshing = False
+112 LastProjectName = vbNullString
+114 LastCodeModuleName = vbNullString
+116 ProcessMsg = True
+118 LstHistSel = 0
+120 ReDim arrHistory(0 To 2, 0 To 0)
+122 ReDim arrHitParade(0 To 2, 0 To 0)
+    '<EhFooter>
+    Exit Sub
+
+L_ResetListByNewStart_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.L_ResetListByNewStart " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+
+
+
+
+Private Sub Image1_DblClick()
+100 If tvCodeBrowser.Visible = True Then
+102     tvCodeBrowser.Visible = False
+    Else
+104     tvCodeBrowser.Visible = True
+    End If
+
+End Sub
+
+
+Private Sub Image1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If LbCopyright.ForeColor = vbBlue Then
+        LbCopyright.ForeColor = vbBlack
+        LbCopyright.FontUnderline = False
+        LbCopyright.MousePointer = 0
+    End If
+End Sub
+
+
+Private Sub LbCopyright_Click()
+
+    If IsFirstStart Then Exit Sub
+    ShellExecute hWnd, "open", "mailto:capodastro@inode.at", vbNullString, vbNullString, 5
+    LbCopyright.ForeColor = vbRed
+End Sub
+
+Private Sub LbCopyright_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If LbCopyright.ForeColor <> vbBlue Then
+        LbCopyright.ForeColor = vbBlue
+        LbCopyright.FontUnderline = True
+        LbCopyright.MousePointer = 99
+    End If
+End Sub
+
+
+Private Sub LstHits_Click()
+    Dim strTemp$, sKey$, strProject$, strCodeModule$
+    Dim NodeX As Node, objCP As CodePane
+
+    On Error GoTo eH
+
+    'disable the hook pipeline
+100 If ProcessMsg = True Then ProcessMsg = False
+
+    'prepare
+102 strProject = arrHitParade(2, LstHits.ListIndex)
+104 strCodeModule = arrHitParade(1, LstHits.ListIndex)
+
+    'show the right Codepane
+'106 Set objCP = VBInstance.VBProjects(strProject).VBComponents.Item(strCodeModule).CodeModule.CodePane
+'108 objCP.Show
+
+    'display the expanded module in the treeview
+110 sKey = strProject & Vb_Sep & strCodeModule & Vb_Sep
+
+114 Set NodeX = tvCodeBrowser.Nodes(sKey)
+116 If Not NodeX.Expanded Then
+        bRefreshing = True
+        NoCodepane = True
+112     StopClick = False
+        tvCodeBrowser_NodeClick NodeX
+        bRefreshing = False
+        NoCodepane = False
+    End If
+    
+    'prepare the final key
+118 strTemp = arrHitParade(0, LstHits.ListIndex)
+
+120 If Not strTemp = vbNullString Then
+122     If Not strTemp = Vb_Gnrl Then
+124         sKey = sKey & strTemp
+        End If
+    End If
+
+    'execute
+126 Set NodeX = tvCodeBrowser.Nodes(sKey)
+128 StopClick = False
+130 tvCodeBrowser_NodeClick NodeX
+
+    'reenable the hook pipeline
+132 If ProcessMsg = False Then ProcessMsg = True
+
+    Exit Sub
+eH:
+134 If ProcessMsg = False Then ProcessMsg = True
+136 MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.LstHits_Click " & _
+            "at line " & Erl
+    'Resume Next
+End Sub
+
+Private Sub mobjCBEvts_Click(ByVal CommandBarControl As Object, handled As Boolean, CancelDefault As Boolean)
+    '<EhHeader>
+    On Error GoTo mobjCBEvts_Click_Err
+    '</EhHeader>
+
+    Dim oPrjExplorerWindow As Window, ExplorerWindowVis As Boolean, BrowserWindowVis As Boolean
+    Dim oPrjExplorerWindow1 As Window
+    
+    AfterRun = True
+    
+100 For Each oPrjExplorerWindow In VBInstance.Windows
+102     If oPrjExplorerWindow.Type = vbext_wt_ProjectWindow Then
+104         Set oPrjExplorerWindow1 = oPrjExplorerWindow
+106         If oPrjExplorerWindow.Visible = True Then ExplorerWindowVis = True
+        End If
+
+108     If Connect.mWindow.Visible Then BrowserWindowVis = True
+110 Next oPrjExplorerWindow
+
+112 If ExplorerWindowVis = False And BrowserWindowVis = False Then
+114     Connect.mWindow.Visible = True
+        'ProcessMsg = True
+116 ElseIf ExplorerWindowVis = False And BrowserWindowVis = True Then
+118     oPrjExplorerWindow1.Height = Connect.mWindow.Height
+120     Connect.mWindow.Visible = False
+        'ProcessMsg = False
+122     oPrjExplorerWindow1.Visible = True
+124 ElseIf ExplorerWindowVis = True And BrowserWindowVis = False Then
+        '    Connect.mWindow.Height = oPrjExplorerWindow1.Height
+126     oPrjExplorerWindow1.Visible = False
+128     Connect.mWindow.Visible = True
+        'ProcessMsg = True
+130 ElseIf ExplorerWindowVis = False And BrowserWindowVis = False Then
+132     Connect.mWindow.Visible = True
+        'ProcessMsg = True
+134 ElseIf ExplorerWindowVis = True And BrowserWindowVis = True Then
+136     oPrjExplorerWindow1.Visible = False
+    End If
+    '<EhFooter>
+    Exit Sub
+
+mobjCBEvts_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.mobjCBEvts_Click " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+
+Private Sub TextGetHook_Change()
+    On Error GoTo eH
+
+100 If IsFirstStart Or IsLoading Then
+102     TextGetHook.Text = vbNullString
+        Exit Sub
+    End If
+
+104 If TextGetHook.Text = Vb_NewProc Then
+
+
+106     If H_IsNewThing Then
+108         If M_ValidateLastProc > 0 And StopHistory = False Then
+110             L_AddToHistory
+            End If
+        End If
+    End If
+
+112 If TextGetHook.Text = Vb_MDIChild Then
+114     Tv_MDIChildCheck
+    End If
+
+116 TextGetHook.Text = vbNullString
+
+    Exit Sub
+
+eH:
+118 Select Case Err.Number
+    Case 35601 'Element nicht gefunden
+        'Err.Clear
+120     Resume Next
+122 Case Else
+124     MsgBox Err.Description & vbCrLf & _
+                Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.TextGetHook_Change " & _
+                "at line " & Erl
+126     Resume Next
+    End Select
+End Sub
+
+
+Private Sub Timer1_Timer()
+
+100 DoEvents
+102 DoEvents    'yeald to the loading process
+104 DoEvents
+106 Timer1.Enabled = False
+108 Tv_ExpandActive
+    Exit Sub
+eH:
+110 Resume Next
+End Sub
+
+
+Private Sub Timer2_Timer()
+    On Error GoTo eH
+100 DoEvents
+102 Timer2 = False
+104 M_RefreshActiveModule
+    Exit Sub
+eH:
+106 If ProcessMsg = False Then ProcessMsg = True
+108 MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.Timer2_Timer " & _
+            "at line " & Erl
+End Sub
+
+
+
+
+
+Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)
+    Dim NodeX As Node, objComp As VBComponent
+    Dim strProject$, strCodeModule$
+    Dim ProcessIt As Boolean
+    On Error GoTo eH
+
+100 Select Case Button.Index
+    Case 1, 2
+102     Set NodeX = tvCodeBrowser.SelectedItem
+104     If NodeX Is Nothing Then Exit Sub
+
+106     If NodeX.Tag = Vb_PropPage Then
+108         ProcessIt = True
+110     ElseIf NodeX.Tag = Vb_ActiveXDesigner Then
+112         ProcessIt = True
+114     ElseIf NodeX.Tag = Vb_DocObject Then
+116         ProcessIt = True
+118     ElseIf NodeX.Tag = Vb_UserControl Then
+120         ProcessIt = True
+122     ElseIf NodeX.Tag = Vb_VBMDIForm Then
+124         ProcessIt = True
+126     ElseIf NodeX.Tag = Vb_MSForm Then
+128         ProcessIt = True
+130     ElseIf NodeX.Tag = Vb_VBForm Then
+132         ProcessIt = True
+        End If
+
+134     If Not ProcessIt Then Exit Sub
+
+136     Select Case NodeX.Tag
+        Case Vb_Project
+138         Set objComp = VBInstance.ActiveVBProject.VBComponents(VBInstance.ActiveCodePane.CodeModule.Name)
+140     Case Else
+142         strProject = H_NodeKeyToPrjName(NodeX.key)
+144         strCodeModule = H_NodeKeyToCodeModName(NodeX.key)
+
+146         If LenB(strProject) > 0 And LenB(strCodeModule) > 0 Then
+148             Set objComp = VBInstance.VBProjects(strProject).VBComponents(strCodeModule)
+            End If
+        End Select
+
+150     If Button.Index = 1 Then
+152         If Not objComp.CodeModule Is Nothing Then
+154             objComp.CodeModule.CodePane.Window.Visible = True
+156             objComp.CodeModule.CodePane.Window.SetFocus
+            End If
+158     ElseIf Button.Index = 2 Then
+160         If Not objComp.DesignerWindow Is Nothing Then
+162             objComp.DesignerWindow.Visible = True
+164             objComp.DesignerWindow.SetFocus
+            End If
+        End If
+166 Case 4
+168     If LstHistSel > 0 Then
+170         If ProcessMsg = True Then ProcessMsg = False
+            StopHistory = True
+172         LstHistSel = LstHistSel - 1
+174         Set NodeX = tvCodeBrowser.Nodes(H_ModuleKeyFromListArr(LstHistSel))
+
+            If Not NodeX.Expanded Then
+176             StopClick = False
+                NoCodepane = True
+178             tvCodeBrowser_NodeClick NodeX
+                NoCodepane = False
+            End If
+            
+180         Set NodeX = tvCodeBrowser.Nodes(H_NodeKeyFromListArr(LstHistSel))
+182         StopClick = False
+184         tvCodeBrowser_NodeClick NodeX
+            'NodeX.Selected = True
+186         LstHistory.Selected(LstHistSel) = True
+188         If ProcessMsg = False Then ProcessMsg = True
+            StopHistory = False
+        End If
+190 Case 5
+192     If LstHistSel < LstHistory.ListCount - 1 Then
+194         If ProcessMsg = True Then ProcessMsg = False
+            StopHistory = True
+            
+196         LstHistSel = LstHistSel + 1
+198         Set NodeX = tvCodeBrowser.Nodes(H_ModuleKeyFromListArr(LstHistSel))
+
+            If Not NodeX.Expanded Then
+                NoCodepane = True
+200             StopClick = False
+202             tvCodeBrowser_NodeClick NodeX
+                NoCodepane = False
+            End If
+            
+204         StopClick = False
+206         Set NodeX = tvCodeBrowser.Nodes(H_NodeKeyFromListArr(LstHistSel))
+208         tvCodeBrowser_NodeClick NodeX
+210         'NodeX.Selected = True
+212         LstHistory.Selected(LstHistSel) = True
+214         If ProcessMsg = False Then ProcessMsg = True
+            StopHistory = False
+        End If
+216 Case 6
+218     If LstHits.Visible = True Then
+220         LstHits.Visible = False
+222         LstHistory.Visible = False
+224         tvCodeBrowser.Visible = True
+        Else
+226         LstHits.Visible = True
+228         LstHistory.Visible = False
+230         tvCodeBrowser.Visible = False
+        End If
+232 Case 7
+234     If LstHistory.Visible = True Then
+236         LstHistory.Visible = False
+238         LstHits.Visible = False
+240         tvCodeBrowser.Visible = True
+        Else
+242         LstHistory.Visible = True
+244         tvCodeBrowser.Visible = False
+246         LstHits.Visible = False
+        End If
+248 Case 9
+249     If LstHits.Visible = True Or LstHistory.Visible = True Then
+250         If LstHistory.Visible = True Then LstHistory.Visible = False
+            If LstHits.Visible = True Then LstHits.Visible = False
+            If tvCodeBrowser.Visible = True Then tvCodeBrowser.Visible = False
+            Exit Sub
+        End If
+        
+251     If tvCodeBrowser.Visible = True Then
+252         tvCodeBrowser.Visible = False
+        Else
+254         tvCodeBrowser.Visible = True
+        End If
+        
+        Refresh
+284 Case 10
+286     If ProcessMsg = True Then ProcessMsg = False
+288     tvCodeBrowser.Nodes.Clear
+290     LstHistory.Clear
+292     LstHits.Clear
+294     LstHistSel = 0
+296     LastMemberCount = 0
+298     LastMemberName = vbNullString
+300     LastMemberType = 0
+302     LastCodeModuleName = vbNullString
+304     LastProjectName = vbNullString
+306     LastKey = vbNullString
+
+308     FS_Insert_Components
+310     If ProcessMsg = False Then ProcessMsg = True
+312 Case 12
+        'enable hooks
+314     SaveSetting App.Title, "Settings", "Hook", "Enabled"
+316     HookMainWindow
+318     'If ProcessMsg = False Then ProcessMsg = True
+320 Case 13
+        'disable hooks
+322     UnhookMainWindow
+324     SaveSetting App.Title, "Settings", "Hook", "Disabled"
+    End Select
+    Exit Sub
+eH:
+326 Select Case Err.Number
+    Case 35605 'Das Steuerelement dieses Elementes wurde geloescht
+328     Resume Next
+330 Case 35602      'Schlussel is in der Auflistung nicht eindeutig
+        'Resume Next
+332     MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.Toolbar1_ButtonClick " & _
+                "at line " & Erl
+334 Case 35601      'Element not found
+336     Resume Next
+338 Case 91        'Objekt Variable oder With-Block Variable nicht festgelegt
+340     FreezeMDIClient False
+342     'If ProcessMsg = False Then ProcessMsg = True
+344 Case Else
+346     'If ProcessMsg = False Then ProcessMsg = True
+348     MsgBox Err.Description & vbCrLf & Err.Number & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.Toolbar1_ButtonClick " & _
+                "at line " & Erl
+    End Select
+End Sub
+
+Private Sub tvCodeBrowser_Collapse(ByVal Node As MSComctlLib.Node)
+
+100 LockWindowUpdate 0
+End Sub
+
+Private Sub tvCodeBrowser_Expand(ByVal Node As MSComctlLib.Node)
+
+100 If bClosingSession Then Exit Sub
+
+102 If (Node.Child.Tag = Vb_DummyTag) Or _
+            (Node.Child.Tag = vbNullString) Then
+104     tvCodeBrowser_NodeClick Node
+106     tvCodeBrowser_NodeClick Node
+    Else
+108     LockWindowUpdate 0
+    End If
+End Sub
+
+Private Sub tvCodeBrowser_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+
+100 If StopClick = True Then StopClick = False
+End Sub
+
+
+Private Sub tvCodeBrowser_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+
+100 StopClick = False
+End Sub
+
+Private Sub tvCodeBrowser_NodeClick(ByVal Node As MSComctlLib.Node)
+    On Error GoTo eH
+
+100 If bClosingSession Or _
+            IsCompLoading Or _
+            StopClick Or _
+            bInRunMode Then Exit Sub
+
+    Dim oPrj As VBProject, oCMod As CodeModule, oCPane As CodePane
+    Dim PosX&, PosY&, sPrj$, sCMod$, lTmp&
+
+102 StopClick = True
+
+104 If InStr(Node.Tag, Vb_Backslash) > 0 Then
+106     U_NodeClick_B Node
+        Exit Sub
+    End If
+
+108 LockWindowUpdate GetDesktopWindow
+110 U_NodeClick_A Node
+112 DoEvents
+114 sPrj = H_NodeKeyToPrjName(Node.key)
+116 sCMod = H_NodeKeyToCodeModName(Node.key)
+118 Set oPrj = VBInstance.VBProjects(sPrj)
+
+120 If Len(sCMod) Then
+122     Set oCMod = oPrj.VBComponents.Item(sCMod).CodeModule
+    Else
+124     LockWindowUpdate 0
+        Exit Sub
+    End If
+
+126 Set oCPane = oCMod.CodePane
+
+128 lngPosition = 0
+130 U_NodeClick_B Node
+132 If Not NoCodepane Then oCPane.Window.SetFocus
+
+134 If Not NoCodepane Then
+136     If Not bRefreshing Then
+138         With MouseEvent
+140             PosX = .GetX
+142             PosY = .GetY
+144             .ClickWindow hWndCodePane
+146             .SetMousePos PosX, PosY
+            End With
+        End If
+
+148     DoEvents
+150     lTmp = H_ActiveProcedureStartLine(lngPosition)
+
+152     If oCMod.CountOfDeclarationLines = 0 Then
+154         Select Case lTmp
+            Case Is > 1 'has code
+156             oCPane.SetSelection lngPosition + 1, 1, lngPosition + 1, 1
+158         Case Is = -1 'no code
+160             oCPane.SetSelection 2, 1, 2, 1
+162         Case Is = 1 'no general
+164             oCPane.SetSelection 2, 1, 2, 1
+            End Select
+        Else
+166         If lngPosition = 1 Then lngPosition = 0
+168         oCPane.SetSelection lngPosition + 1, 1, lngPosition + 1, 1
+        End If
+    End If
+
+170 LockWindowUpdate 0
+    Exit Sub
+eH:
+172 Select Case Err.Number
+    Case 9
+174     LockWindowUpdate 0
+176 Case Else
+178     MsgBox Err.Description & vbCrLf & _
+                "in CodeBrowser.docCodeBrowser.tvCodeBrowser_NodeClick " & _
+                "at line " & Erl & vbCrLf & Err.Number
+180     Resume Next
+    End Select
+End Sub
+
+Private Sub UserDocument_Initialize()
+    
+LbVersion.Caption = "Version: " & App.Major & "." & App.Minor & "." & App.Revision
+
+End Sub
+
+
+Private Sub UserDocument_Resize()
+'! Delayed error handler
+    'Resize the treeview within the ActiveX document
+    '<EhHeader>
+    On Error Resume Next
+    '</EhHeader>
+    On Error Resume Next
+100 With UserDocument
+102     If .ViewportWidth >= 90 And .ViewportHeight >= 390 Then
+104         .tvCodeBrowser.Move 0, 26 * Screen.TwipsPerPixelY, _
+                    .ViewportWidth - 6 * Screen.TwipsPerPixelX, _
+                    .ViewportHeight - 26 * Screen.TwipsPerPixelY
+        End If
+    End With
+
+106 LstHistory.Move tvCodeBrowser.Left, tvCodeBrowser.Top, tvCodeBrowser.Width, tvCodeBrowser.Height
+108 LstHits.Move tvCodeBrowser.Left, tvCodeBrowser.Top, tvCodeBrowser.Width, tvCodeBrowser.Height
+109 Image1.Move tvCodeBrowser.Left, tvCodeBrowser.Top, tvCodeBrowser.Width, tvCodeBrowser.Height
+    LbCopyright.Move tvCodeBrowser.Left + 240, LbCopyright.Top, tvCodeBrowser.Width - 240
+    LbVersion.Move tvCodeBrowser.Left + 2850, LbVersion.Top, tvCodeBrowser.Width - 2850
+    LbSerial.Top = LbCopyright.Top - 330
+    LbSerial.Left = 1740
+110 With Picture1
+112     .Width = 480
+114     .Height = 480
+    End With
+End Sub
+
+
+
+Private Sub UserDocument_Show()
+    '<EhHeader>
+    On Error GoTo UserDocument_Show_Err
+    '</EhHeader>
+    Dim oPrjExplorerWindow As Window
+
+100 If AfterRun Then
+102     AfterRun = False
+        Exit Sub
+    End If
+
+104 Set MouseEvent = New CMouseEvent
+    'If IsFirstStart Then
+106 If Connect.mobjDoc Is Nothing Then Exit Sub
+
+    'needed for stopping redraw messages
+108 HwndTv = tvCodeBrowser.hWnd
+
+110 tvCodeBrowser.Visible = False
+    'needed for getting the msgs from the hook proc
+112 hWndTextBox = TextGetHook.hWnd
+
+    'Add a toolbar button to the end of the Standard toolbar
+114 With VBInstance.CommandBars("Standard").Controls
+116     Set mobjMCBCtl = .Add(1, , , .Count + 1)
+    End With
+
+    'Define how the button looks
+118 With mobjMCBCtl
+        'We want a separator before the button
+120     .BeginGroup = True
+        'Set the caption for the button (will also be used as the tooltip)
+122     .Caption = "Code Browser Window"
+        'Copy a bitmap to the clipboard for use as the button's image
+124     Clipboard.SetData Picture1.Image             'LoadPicture(App.Path & "\CodeBrowser.bmp")
+        'Clipboard.SetData docCodeBrowser.ilCodeBrowser.ListImages(24).Picture
+        'Paste the image from the clipboard into the button
+126     .PasteFace
+    End With
+
+    'Hook event handler to receive the button's events
+128 Set mobjCBEvts = VBInstance.Events.CommandBarEvents(mobjMCBCtl)
+    'Configure LstHistory
+    'Choose each column width. Change this for whatever you want.
+
+    '*** Set the column width for each column in this array. Public the array with enough space.
+130 intcolumnWidth(0) = 25 ' First column is 25 spaces.
+132 intcolumnWidth(1) = 15  ' Second column is 20 spaces.
+134 intcolumnWidth(2) = 40 ' Third column is 40 spaces.
+
+136 For Each oPrjExplorerWindow In VBInstance.Windows
+138     If oPrjExplorerWindow.Type = vbext_wt_ProjectWindow Then
+140         If oPrjExplorerWindow.Visible = True Then oPrjExplorerWindow.Visible = False
+            Exit For
+        End If
+142 Next oPrjExplorerWindow
+
+144 SetForegroundWindow IDEhwnd
+    'End If
+    'Dim i&
+    'For i = 1 To ilCodeBrowser.ListImages.Count
+    'SavePicture ilCodeBrowser.ListImages(i).Picture, App.Path & "\imagelist\" & Str(i) & ".bmp"
+    'Next
+    '<EhFooter>
+    Exit Sub
+
+UserDocument_Show_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.UserDocument_Show " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub UserDocument_Terminate()
+    'dereference everything
+    '<EhHeader>
+    On Error GoTo UserDocument_Terminate_Err
+    '</EhHeader>
+
+    'Set LastNode = Nothing
+    'tvCodeBrowser.Nodes.Clear
+
+    'Remove our button from the toolbar
+100 If Not mobjMCBCtl Is Nothing Then
+102     mobjMCBCtl.Delete
+104     Set mobjMCBCtl = Nothing
+    End If
+
+    'Destroy the command bar button event handler
+106 Set mobjCBEvts = Nothing
+
+    '<EhFooter>
+    Exit Sub
+
+UserDocument_Terminate_Err:
+    MsgBox Err.Description & vbCrLf & _
+            "in CodeBrowser.docCodeBrowser.UserDocument_Terminate " & _
+            "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+
+
+
+
+
