@@ -1,0 +1,16 @@
+[History]
+B0=CodeBrowser/docCodeBrowser/Toolbar1_ButtonClick
+B1=CodeBrowser/docCodeBrowser/tvCodeBrowser_NodeClick
+B2=CodeBrowser/docCodeBrowser/UserDocument_DblClick
+B3=CodeBrowser/docCodeBrowser/U_NodeClick_A
+B4=CodeBrowser/docCodeBrowser/U_NodeClick_B
+B5=CodeBrowser/docCodeBrowser/U_NodeClick_C
+B6=CodeBrowser/docCodeBrowser/LstHits_Click
+B7=CodeBrowser/modUtility/FreezeMDIClient
+B8=CodeBrowser/modUtility
+B9=CodeBrowser/docCodeBrowser/tvCodeBrowser_Expand
+B10=CodeBrowser/docCodeBrowser/TextGetHook_Change
+B11=CodeBrowser/docCodeBrowser/L_ResetLists
+B12=CodeBrowser/Connect/eVBComponentsEvents_ItemRemoved
+B13=CodeBrowser/docCodeBrowser/tvCodeBrowser_MouseMove
+B14=CodeBrowser/docCodeBrowser/M_ValidateLastProc
